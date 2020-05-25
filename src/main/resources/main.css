@@ -1,0 +1,239 @@
+#pane, .root, .split-pane{
+    -fx-background-color:#F6FAFD;
+    -fx-foreground-color: #F6FAFD;
+}
+
+#rootnode {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 0);
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+}
+
+.chart-vertical-zero-line {
+    -fx-stroke: #D6E1E6;
+}
+.chart-horizontal-zero-line {
+    -fx-stroke: #D6E1E6;
+}
+
+.chart-plot-background {
+    -fx-background-color: transparent;
+    -fx-foreground-color: transparent;
+    -fx-stroke: transparent;
+}
+
+.chart-vertical-grid-lines {
+    -fx-stroke:  #EAEEF4;
+}
+.chart-horizontal-grid-lines {
+    -fx-stroke: #EAEEF4;
+
+}
+
+.chart-legend-item-symbol{
+    -fx-background-radius: 0;
+}
+.chart-alternative-row-fill {
+    -fx-fill: transparent;
+    -fx-stroke: transparent;
+    -fx-stroke-width: 0;
+}
+
+.chart-series-line {
+    -fx-tick-length: 0;
+    -fx-minor-tick-length: 0;
+    -fx-stroke-width: 1pt;
+}
+
+.axis {
+    -fx-stroke: transparent;
+    -fx-fill: transparent;
+    -fx-font-size: 1.4em;
+    -fx-tick-label-fill: #7E92A2;
+    -fx-font-family: Gilroy-Regular;
+    -fx-tick-length: 0;
+    -fx-minor-tick-length: 0;
+}
+
+.chart-series-line {
+    -fx-stroke-width: 1px;
+    -fx-effect: null;
+}
+
+.data0.axis {
+    -fx-background-color: black;
+}
+
+
+.default-color0.chart-line-symbol {
+    -fx-background-color: #0084F4;
+
+}
+.chart-line-symbol {
+    -fx-background-color: #2caf91, #2caf91;
+    -fx-background-insets: 0, 0;
+    -fx-padding: 2px;
+}
+.default-color1.chart-line-symbol {
+    -fx-background-color: #FFCF5C;
+
+}
+
+.default-color2.chart-line-symbol {
+    -fx-background-color: #BE52F2;
+
+}
+
+
+.default-color3.chart-line-symbol {
+    -fx-background-color: #6979F8;
+
+}
+
+
+.axis-tick-mark {
+    -fx-stroke: #637040;
+    -fx-stroke-width: 0px;
+}
+
+.background {
+    -fx-background-color:  #1e4955;
+    -fx-foreground-color:  #1e4955;
+}
+
+.button {
+    -fx-padding: 5 22 5 22;
+    -fx-border-width: 0;
+    -fx-margin: 5px;
+    -fx-background-radius: 4px;
+    -fx-background-color: #0084F4;
+    -fx-font-size: 16px;
+    -fx-text-fill: white;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+}
+
+.button:hover {
+    -fx-background-color:#0076db;
+}
+
+.button:pressed, .button:default:hover:pressed {
+    -fx-background-color: #0076db;
+}
+
+.text-field {
+    -fx-font-size: 14px;
+    -fx-text-fill:#092C4C;
+    -fx-border-radius: 4px;
+}
+
+.button:disabled, .button:default:disabled {
+    -fx-opacity: 0.4;
+    -fx-background-color: #279d82;
+    -fx-text-fill: white;
+}
+
+.button:default {
+    -fx-background-color: -fx-focus-color;
+    -fx-text-fill: #ffffff;
+}
+
+.button:default:hover {
+    -fx-background-color: derive(-fx-focus-color,30%);
+}
+
+.text-area .content {
+    -fx-background-color: white;
+    -fx-text-fill: #092C4C;
+}
+.text-area {
+    -fx-background-color: white;
+}
+
+.wrapper {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 0);
+    -fx-background-color: white;
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+}
+
+.close-button {
+    -fx-cursor: OPEN_HAND;
+    -fx-shape:"M 4.9902344 3.9902344 A 1.0001 1.0001 0 0 0 4.2929688 5.7070312 L 10.585938 12 L 4.2929688 18.292969 A 1.0001 1.0001 0 1 0 5.7070312 19.707031 L 12 13.414062 L 18.292969 19.707031 A 1.0001 1.0001 0 1 0 19.707031 18.292969 L 13.414062 12 L 19.707031 5.7070312 A 1.0001 1.0001 0 0 0 18.980469 3.9902344 A 1.0001 1.0001 0 0 0 18.292969 4.2929688 L 12 10.585938 L 5.7070312 4.2929688 A 1.0001 1.0001 0 0 0 4.9902344 3.9902344 zM 4.9902344 3.9902344 A 1.0001 1.0001 0 0 0 4.2929688 5.7070312 L 10.585938 12 L 4.2929688 18.292969 A 1.0001 1.0001 0 1 0 5.7070312 19.707031 L 12 13.414062 L 18.292969 19.707031 A 1.0001 1.0001 0 1 0 19.707031 18.292969 L 13.414062 12 L 19.707031 5.7070312 A 1.0001 1.0001 0 0 0 18.980469 3.9902344 A 1.0001 1.0001 0 0 0 18.292969 4.2929688 L 12 10.585938 L 5.7070312 4.2929688 A 1.0001 1.0001 0 0 0 4.9902344 3.9902344 z" ;
+}
+
+
+.close-button .icon {
+    -fx-background-color: -icon-paint;
+    -size: 18px;
+    -fx-min-height: -size;
+    -fx-min-width: -size;
+    -fx-max-height: -size;
+    -fx-max-width: -size;
+}
+
+.clipboard-button {
+    -fx-cursor: OPEN_HAND;
+    -fx-shape: "M 4 2 C 2.895 2 2 2.895 2 4 L 2 17 C 2 17.552 2.448 18 3 18 C 3.552 18 4 17.552 4 17 L 4 4 L 17 4 C 17.552 4 18 3.552 18 3 C 18 2.448 17.552 2 17 2 L 4 2 z M 8 6 C 6.895 6 6 6.895 6 8 L 6 20 C 6 21.105 6.895 22 8 22 L 20 22 C 21.105 22 22 21.105 22 20 L 22 8 C 22 6.895 21.105 6 20 6 L 8 6 z M 8 8 L 20 8 L 20 20 L 8 20 L 8 8 z";
+}
+
+.clipboard-button .icon {
+    -fx-background-color: -icon-paint;
+    -size: 18px;
+    -fx-min-height: -size;
+    -fx-min-width: -size;
+    -fx-max-height: -size;
+    -fx-max-width: -size;
+}
+
+.pdf-button {
+    -fx-cursor: OPEN_HAND;
+    -fx-shape:"M 6 2 C 4.9057453 2 4 2.9057453 4 4 L 4 9 C 2.895 9 2 9.895 2 11 L 2 16 C 2 17.105 2.895 18 4 18 L 4 20 C 4 21.094255 4.9057453 22 6 22 L 18 22 C 19.094255 22 20 21.094255 20 20 L 20 7.4140625 A 1.0001 1.0001 0 0 0 19.707031 6.7070312 L 15.292969 2.2929688 A 1.0001 1.0001 0 0 0 14.585938 2 L 6 2 z M 6 4 L 14 4 L 14 7 C 14 7.552 14.448 8 15 8 L 18 8 L 18 9 L 6 9 L 6 4 z M 4 11 L 5.5 11 C 6.328 11 7 11.672 7 12.5 C 7 13.328 6.328 14 5.5 14 L 5 14 L 5 16 L 4 16 L 4 11 z M 13 11 L 16 11 L 16 12 L 14 12 L 14 13 L 15.599609 13 L 15.599609 14 L 14 14 L 14 16 L 13 16 L 13 11 z M 8 11.023438 L 9.6289062 11.023438 C 11.210906 11.023438 12 11.974906 12 13.128906 L 12 13.900391 C 12 15.068391 11.209234 16 9.6152344 16 L 8 16 L 8 11.023438 z M 5 12 L 5 13 L 5.5 13 C 5.776 13 6 12.776 6 12.5 C 6 12.224 5.776 12 5.5 12 L 5 12 z M 9 12.023438 L 9 15 L 9.6152344 15 C 10.247234 15 11 14.808391 11 13.900391 L 11 13.128906 C 11 12.214906 10.254906 12.023438 9.6289062 12.023438 L 9 12.023438 z M 6 18 L 18 18 L 18 20 L 6 20 L 6 18 z";
+}
+
+.pdf-button .icon {
+    -fx-background-color: blue;
+    -size: 20px;
+    -fx-min-height: -size;
+    -fx-min-width: -size;
+    -fx-max-height: -size;
+    -fx-max-width: -size;
+}
+
+.xls-button {
+    -fx-cursor: OPEN_HAND;
+    -fx-shape: "M 6 2 C 4.9057453 2 4 2.9057453 4 4 L 4 9 C 2.895 9 2 9.895 2 11 L 2 16 C 2 17.105 2.895 18 4 18 L 4 20 C 4 21.094255 4.9057453 22 6 22 L 18 22 C 19.094255 22 20 21.094255 20 20 L 20 7.4140625 A 1.0001 1.0001 0 0 0 19.707031 6.7070312 L 15.292969 2.2929688 A 1.0001 1.0001 0 0 0 14.585938 2 L 6 2 z M 6 4 L 14 4 L 14 7 C 14 7.552 14.448 8 15 8 L 18 8 L 18 9 L 6 9 L 6 4 z M 4.0253906 11 L 5.2734375 11 L 5.9980469 12.716797 L 6.7246094 11 L 7.9707031 11 L 6.703125 13.478516 L 8 16 L 6.7382812 16 L 5.9980469 14.251953 L 5.2617188 16 L 4 16 L 5.2949219 13.478516 L 4.0253906 11 z M 9 11 L 10 11 L 10 15 L 12 15 L 12 16 L 9 16 L 9 11 z M 14.490234 11 C 15.913234 11.041 16 12.282906 16 12.503906 L 15.03125 12.503906 C 15.03125 12.400906 15.048656 11.806641 14.472656 11.806641 C 14.297656 11.806641 13.905547 11.884187 13.935547 12.367188 C 13.964547 12.810188 14.547297 13.019406 14.654297 13.066406 C 14.878297 13.148406 15.987094 13.642391 15.996094 14.650391 C 15.998094 14.864391 15.942766 15.985 14.509766 16 C 12.950766 16.017 12.845703 14.675437 12.845703 14.398438 L 13.820312 14.398438 C 13.820312 14.545438 13.832766 15.256172 14.509766 15.201172 C 14.916766 15.167172 15.005531 14.87425 15.019531 14.65625 C 15.042531 14.28925 14.692266 14.068625 14.322266 13.890625 C 13.802266 13.640625 12.979844 13.333375 12.964844 12.359375 C 12.951844 11.482375 13.596234 10.975 14.490234 11 z M 6 18 L 18 18 L 18 20 L 6 20 L 6 18 z";
+}
+
+.h1 {
+    -fx-font-size: 32px;
+    -fx-text-fill: #092c4c;
+    -fx-fill: #092c4c;
+    -fx-font-family: Gilroy-Bold;
+}
+.h2 {
+    -fx-font-size: 16px;
+    -fx-text-fill: #092c4c;
+    -fx-fill: #092c4c;
+    -fx-font-family: Gilroy-Medium;
+}
+
+.h3 {
+    -fx-font-size: 14px;
+    -fx-text-fill: #092c4c;
+    -fx-fill: #092c4c;
+    -fx-font-family: Gilroy-Regular;
+}
+
+.success {
+    -fx-text-fill: #0084F4;
+    -fx-fill: #0084F4;
+    -fx-font-size: 12px;
+    -fx-font-family: Gilroy-Medium;
+}
+
+.error {
+    -fx-text-fill: #FF647C;
+    -fx-fill: #FF647C;
+    -fx-font-size: 12px;
+    -fx-font-family: Gilroy-Medium;
+}
