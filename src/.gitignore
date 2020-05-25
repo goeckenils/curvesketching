@@ -27,3 +27,14 @@ commons_logging_1_2.xml
 # virtual machine crash logs
 hs_err_pid*
 .idea/libraries
+#Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
