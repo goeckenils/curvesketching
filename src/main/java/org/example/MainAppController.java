@@ -32,6 +32,7 @@ public class MainAppController implements Initializable {
     public Button squaredButton;
     public Button HandleFirstDerivatives;
     public Button clearButton;
+    public Text XIntersectionContent;
     private String _equation;
 
     private void SetEquation(String equation) { _equation = equation; }
@@ -46,7 +47,7 @@ public class MainAppController implements Initializable {
     private TextField input;
 
     @FXML
-    private Label errorText;
+    private Text errorText;
 
     private org.example.Helper.MyGraph mathsGraph;
 
@@ -67,19 +68,19 @@ public class MainAppController implements Initializable {
     @FXML
     private void handleSquaredButtonAction(final ActionEvent event) {
 
-        String equation = input.getText();
-        SetEquation(equation);
-        MathPower math = new MathPower(equation);
-
         try {
+            String equation = input.getText();
+            SetEquation(equation);
+            MathPower math = new MathPower(equation);
 
             List<double[]> temp = math.GetRootPoints();
             List<double[]> extremaPoints = math.GetExtremaPoints();
             List<double[]> inflectionPoints = math.GetInflectionPoints();
+            List<double[]> XIntersection = math.GetXIntersectionPoints(1, -10, 10);
 
 
             for (var data: temp)
-                RootsContent.setText(Math.round(data[0] * 100) +"/"+ Math.round(data[1]) *100);
+                RootsContent.setText(data[0] +"/"+ data[1]);
 
             for (var data: extremaPoints)
                 ExtremaContent.setText(data[0] +"/"+ data[1]);
@@ -89,19 +90,22 @@ public class MainAppController implements Initializable {
 
                 YIntersectionContent.setText("0.0/"+ math.GetYIntersectionPoint());
 
-            for (var data: math.GetXIntersectionPoints(1, -10, 10))
-                System.out.println(data[0] +"/"+ data[1]);
+            for (var data: XIntersection)
+                XIntersectionContent.setText(data[0] +"/"+ data[1]);
 
             plotLine(x -> Result(x, math.formulaData));
 
-        } catch (Exception ex) { SetError(); }
+        } catch (Exception ex) {
+            SetError();
+        }
 
     }
 
 
     private void SetError() {
 
-        errorText.setText("pls enter a valid equation");
+        input.setPromptText("You have to enter a valid equation!");
+        input.setStyle("-fx-prompt-text-fill: #DC4849");
         input.setStyle("-fx-border-color: #DC4849");
 
     }
@@ -155,6 +159,10 @@ public class MainAppController implements Initializable {
         input.setText("");
         input.setStyle("-fx-border-color: transparent");
         ExtremaContent.setText("");
+        RootsContent.setText("");
+        InflectionContent.setText("");
+        YIntersectionContent.setText("");
+        XIntersectionContent.setText("");
 
     }
     @FXML
@@ -163,10 +171,6 @@ public class MainAppController implements Initializable {
         stage.close();
     }
 
-
-    public void ExtremaCopyToClipboard(ActionEvent actionEvent) {
-        clip.CopyToClipboard(ExtremaContent.getText(), statusText);
-    }
 
     public void ExportToPdf(ActionEvent actionEvent) throws IOException {
         MathPower math = new MathPower(_equation);
@@ -191,5 +195,26 @@ public class MainAppController implements Initializable {
         String PathFileExtension = fileWriter.ChooseDirectory("Save your file","Equation","xlsx", stage);
         fileWriter.WriteToExcel(fileWriter,PathFileExtension);
 
+    }
+
+
+    public void ExtremaCopyToClipboard(ActionEvent actionEvent) {
+        clip.CopyToClipboard(ExtremaContent.getText(), errorText);
+    }
+
+    public void RootsCopyToClipboard(ActionEvent actionEvent) {
+        clip.CopyToClipboard(RootsContent.getText(), errorText);
+    }
+
+    public void InflectionCopyToClipboard(ActionEvent actionEvent) {
+        clip.CopyToClipboard(InflectionContent.getText(), errorText);
+    }
+
+    public void YIntersectionCopyToClipboard(ActionEvent actionEvent) {
+        clip.CopyToClipboard(YIntersectionContent.getText(), errorText);
+    }
+
+    public void XIntersectionCopyToClipboard(ActionEvent actionEvent) {
+        clip.CopyToClipboard(XIntersectionContent.getText(), errorText);
     }
 }
