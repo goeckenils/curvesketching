@@ -1,4 +1,4 @@
-.idea
+
 ﻿**/*.jar
 
 # Compiled class file
@@ -26,7 +26,7 @@
 hs_err_pid*
 .idea/libraries
 #Maven
-target/
+target
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
