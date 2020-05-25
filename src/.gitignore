@@ -1,6 +1,4 @@
 .idea
-out
-commons_logging_1_2.xml
 ﻿**/*.jar
 
 # Compiled class file
