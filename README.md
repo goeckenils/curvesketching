@@ -31,5 +31,5 @@ Apache PDFBox wird verwendet um die Daten in einer PDF Datei zu speichern.
 
 ## [Pdfbox - layout](https://github.com/ralfstuckert/pdfbox-layout)
 Als wir versuchten die normale PDFBox API anzusprechen viel auf das Formatierung nur limitiert zu verfügung stand. Abhilfe dabei schaffte PDFBox Layout die es uns ermöglichte das PDF Dokument vernünftig zu Strukturieren.
-Das Programm darf gerne auch mithilfe von Swing oder Java FX umgesetzt werden. 
+
 
