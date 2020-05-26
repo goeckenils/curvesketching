@@ -1,24 +1,21 @@
 package org.example.mathpower.points;
 
-import org.example.mathpower.MathPower;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class IntersectionPoints {
+class IntersectionPoints {
 
-    private MathPower _math;
+    private Points points;
 
-    public IntersectionPoints(MathPower math) { _math = math; }
+    protected IntersectionPoints(Points Points) { points = Points; }
 
-    public double GetYPoint() {
+    protected double ReturnYPoint() {
 
         double yIntersectionPoint = 0;
 
-        for (var data: _math.formulaData) {
+        for (var data: points.math.formulaData) {
 
-            if (data[1] == 0)
-                yIntersectionPoint = data[0];
+            yIntersectionPoint = data[1] == 0 ? data[0] : 0;
 
         }
 
@@ -26,25 +23,17 @@ public class IntersectionPoints {
 
     }
 
-    public List<double[]> GetXPoints(double xSteps, double lowerCap, double upperCap) {
+    protected List<double[]> ReturnXPoints(double xSteps, double lowerCap, double upperCap) {
 
         List<double[]> result = new ArrayList<>();
-        double yValue, xValue;
+        double xValue;
 
         for (xValue = lowerCap; xValue <= upperCap; xValue += xSteps) {
 
-            yValue = 0;
-
-            for (var data: _math.formulaData) {
-
-                data[0] = data[0] ==  0 ? 1 : data[0];
-
-                if (data[1] != 0)
-                    yValue += data[0] * Math.pow(xValue, data[1]);
-
-            }
-
-            result.add(new double[] { xValue, yValue });
+            result.add(new double[] {
+                xValue,
+                points.yValue.GetYValue(points.math.formulaData, xValue)
+            });
 
         }
 

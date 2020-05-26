@@ -1,7 +1,5 @@
 package org.example.mathpower.helpers;
 
-import org.example.mathpower.MathPower;
-
 import java.util.ArrayList;
 import java.util.List;
 

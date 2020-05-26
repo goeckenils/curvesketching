@@ -6,7 +6,7 @@ public class Bisection {
 
     protected double ReturnBisectionValues(double[] lowerCheck, double[] upperCheck, List<double[]> formulaData) {
 
-        double yValue = 0;
+        double yValue;
         double rootPoint = 0;
         double middleValueCheck;
 

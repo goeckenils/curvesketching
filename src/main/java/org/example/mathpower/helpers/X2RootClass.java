@@ -1,4 +1,5 @@
 package org.example.mathpower.helpers;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,10 +20,8 @@ public class X2RootClass {
         } else if (formulaData.size() == 2) {
 
             double a = formulaData.get(0)[0];
-            double b = -(formulaData.get(1)[0] == 0 ? 1 : formulaData.get(1)[0]); //Negate
-
-            if (a != 0)
-                b = b / formulaData.get(0)[0];
+            double b = -(formulaData.get(1)[0] == 0 ? 1 : formulaData.get(1)[0]);
+            b = a != 0 ? b / formulaData.get(0)[0] : b;
 
             if (formulaData.get(1)[1] == 1) {
 

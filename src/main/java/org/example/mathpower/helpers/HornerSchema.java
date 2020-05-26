@@ -5,93 +5,6 @@ import java.util.List;
 
 public class HornerSchema {
 
-    protected List<double[]> HornerSchema(List<double[]> formulaData, double guessedRootPoint) {
-
-        List<double[]> newFormula = new ArrayList<>();
-        double grade = formulaData.get(0)[1];
-        double count = 0;
-
-        for (var data: formulaData) {
-
-            if (grade == 0)
-                break;
-
-            if (count == 0) {
-
-                if (data[0] == 0)
-                    newFormula.add(new double[] { 1, data[1] - 1 });
-                else
-                    newFormula.add(new double[] { data[0], data[1] - 1 });
-
-                grade--;
-
-            } else if (data[1] == grade){
-
-                if (data[0] == 0)
-                    newFormula.add(new double[]{
-                            1 + (guessedRootPoint * newFormula.get((int) count - 1)[0]),
-                            data[1] - 1
-                    });
-                else
-                    newFormula.add(new double[]{
-                            data[0] + (guessedRootPoint * newFormula.get((int) count - 1)[0]),
-                            data[1] - 1
-                    });
-
-                grade--;
-
-            } else {
-
-                while ((data[1] - 1) != --grade) {
-
-                    newFormula.add(new double[]{
-                            0 + (guessedRootPoint * newFormula.get((int) count - 1)[0]),
-                            grade
-                    });
-
-                    count++;
-
-                }
-
-                if (data[0] == 0) {
-
-                    newFormula.add(new double[]{
-                            1 + (guessedRootPoint * newFormula.get((int) count - 1)[0]),
-                            data[1] - 1
-                    });
-
-                } else if (data[1] != 0) {
-
-                    newFormula.add(new double[]{
-                            data[0] + (guessedRootPoint * newFormula.get((int) count - 1)[0]),
-                            data[1] - 1
-                    });
-
-                }
-
-            }
-
-            if (grade == formulaData.size() - 1 && (data[1] > 0 || data[1] < 0)){
-
-                while (grade != 0) {
-
-                    newFormula.add(new double[] {
-                            0 + (guessedRootPoint * newFormula.get((int) count)[0]),
-                            --grade
-                    });
-
-                }
-
-            }
-
-            count++;
-
-        }
-
-        return newFormula;
-
-    }
-
     public List<Double> ReturnHornerSchemaResults(List<double[]> formulaData) {
 
         ABCFormula abcFormula = new ABCFormula();
@@ -144,11 +57,97 @@ public class HornerSchema {
 
     }
 
+    protected List<double[]> HornerSchema(List<double[]> formulaData, double guessedRootPoint) {
+
+        List<double[]> newFormula = new ArrayList<>();
+        double grade = formulaData.get(0)[1];
+        double count = 0;
+
+        for (var data: formulaData) {
+
+            if (grade == 0)
+                break;
+
+            if (count == 0) {
+
+                if (data[0] == 0)
+                    newFormula.add(new double[] { 1, data[1] - 1 });
+                else
+                    newFormula.add(new double[] { data[0], data[1] - 1 });
+
+                grade--;
+
+            } else if (data[1] == grade){
+
+                if (data[0] == 0)
+                    newFormula.add(new double[]{
+                        1 + (guessedRootPoint * newFormula.get((int) count - 1)[0]),
+                        data[1] - 1
+                    });
+                else
+                    newFormula.add(new double[]{
+                        data[0] + (guessedRootPoint * newFormula.get((int) count - 1)[0]),
+                        data[1] - 1
+                    });
+
+                grade--;
+
+            } else {
+
+                while ((data[1] - 1) != --grade) {
+
+                    newFormula.add(new double[]{
+                        0 + (guessedRootPoint * newFormula.get((int) count - 1)[0]),
+                        grade
+                    });
+
+                    count++;
+
+                }
+
+                if (data[0] == 0) {
+
+                    newFormula.add(new double[]{
+                        1 + (guessedRootPoint * newFormula.get((int) count - 1)[0]),
+                        data[1] - 1
+                    });
+
+                } else if (data[1] != 0) {
+
+                    newFormula.add(new double[]{
+                        data[0] + (guessedRootPoint * newFormula.get((int) count - 1)[0]),
+                        data[1] - 1
+                    });
+
+                }
+
+            }
+
+            if (grade == formulaData.size() - 1 && (data[1] > 0 || data[1] < 0)){
+
+                while (grade != 0) {
+
+                    newFormula.add(new double[] {
+                        0 + (guessedRootPoint * newFormula.get((int) count)[0]),
+                        --grade
+                    });
+
+                }
+
+            }
+
+            count++;
+
+        }
+
+        return newFormula;
+
+    }
+
     protected double GuessARootPoint(List<double[]> formulaData) {
 
         YValue yValues = new YValue();
         Bisection bisection = new Bisection();
-        List<Double> xValues = new ArrayList<>();
         List<double[]> yCheckValues = new ArrayList<>();
         double xCount;
         double guessedRootPoint = Double.NaN;
