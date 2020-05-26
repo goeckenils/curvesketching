@@ -5,7 +5,6 @@
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -84,8 +83,7 @@
                   <Font size="16.0" />
                </font>
             </Text>
-            <Button fx:id="copyToClipboard" layoutX="347.0" layoutY="28.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#ExtremaCopyToClipboard" prefHeight="16.0" prefWidth="16.0" styleClass="clipboard-button" />
-            <Text fx:id="pushnotification" layoutX="14.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="success" text="Copied to clipboard!" visible="false" wrappingWidth="117.22900390625" />
+            <Button layoutX="347.0" layoutY="28.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#ExtremaCopyToClipboard" prefHeight="16.0" prefWidth="16.0" styleClass="clipboard-button" />
             <Text fx:id="ExtremaContent" layoutX="15.0" layoutY="42.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" wrappingWidth="320.4558375929362" />
             <Line endX="277.0" layoutX="105.0" layoutY="55.0" startX="-106.14617156982422" stroke="#eaeef4" />
             <Text layoutX="15.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="Roots:" wrappingWidth="81.22900390625">
@@ -93,7 +91,7 @@
                   <Font size="16.0" />
                </font>
             </Text>
-            <Button fx:id="copyToClipboard1" layoutX="348.0" layoutY="81.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#RootsCopyToClipboard" prefHeight="16.0" prefWidth="16.0" styleClass="clipboard-button" />
+            <Button layoutX="348.0" layoutY="81.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#RootsCopyToClipboard" prefHeight="16.0" prefWidth="16.0" styleClass="clipboard-button" />
             <Text fx:id="RootsContent" layoutX="16.0" layoutY="94.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" wrappingWidth="320.4558375929362" />
             <Line endX="277.0" layoutX="106.0" layoutY="108.0" startX="-106.14617156982422" stroke="#eaeef4" />
          </children>
@@ -122,7 +120,7 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <Button fx:id="copyToClipboard2" layoutX="361.0" layoutY="368.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#InflectionCopyToClipboard" prefHeight="16.0" prefWidth="16.0" styleClass="clipboard-button" />
+      <Button layoutX="361.0" layoutY="368.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#InflectionCopyToClipboard" prefHeight="16.0" prefWidth="16.0" styleClass="clipboard-button" />
       <Text fx:id="InflectionContent" layoutX="29.0" layoutY="382.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" wrappingWidth="320.4558375929362" />
       <Line endX="277.0" layoutX="119.0" layoutY="395.0" startX="-106.14617156982422" stroke="#eaeef4" />
       <Text layoutX="28.0" layoutY="418.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="Y - Intersection" wrappingWidth="128.3723907470703">
@@ -138,7 +136,7 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <Button fx:id="copyToClipboard211" layoutX="362.0" layoutY="483.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#XIntersectionCopyToClipboard" prefHeight="16.0" prefWidth="16.0" styleClass="clipboard-button" />
+      <Button layoutX="362.0" layoutY="483.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#XIntersectionCopyToClipboard" prefHeight="16.0" prefWidth="16.0" styleClass="clipboard-button" />
       <Text fx:id="XIntersectionContent" layoutX="30.0" layoutY="496.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" wrappingWidth="320.4558375929362" />
       <Text fx:id="errorText" visible="false" layoutX="18.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="190.0" />
       <padding>

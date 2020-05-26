@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.LineChart;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -23,9 +22,7 @@ import java.util.function.Function;
 
 public class MainAppController implements Initializable {
 
-    public Button copyToClipboard;
     public Text ExtremaContent;
-    public Text statusText;
     public Text RootsContent;
     public Text InflectionContent;
     public Text YIntersectionContent;
@@ -64,7 +61,9 @@ public class MainAppController implements Initializable {
     Clip clip = new Clip();
 
 
-
+    /**
+     * @param event
+     */
     @FXML
     private void handleSquaredButtonAction(final ActionEvent event) {
 
@@ -102,6 +101,9 @@ public class MainAppController implements Initializable {
     }
 
 
+    /**
+     *
+     */
     private void SetError() {
 
         input.setPromptText("You have to enter a valid equation!");
@@ -110,6 +112,11 @@ public class MainAppController implements Initializable {
 
     }
 
+    /**
+     * @param x
+     * @param formulaResults
+     * @return
+     */
     private double Result(double x, List<double[]> formulaResults) {
 
         double temp = 0;
@@ -126,6 +133,9 @@ public class MainAppController implements Initializable {
 
     }
 
+    /**
+     * @param event
+     */
     @FXML
     private void HandleFirstDerivativesButtonAction(final ActionEvent event) {
 
@@ -139,6 +149,9 @@ public class MainAppController implements Initializable {
 
     }
 
+    /**
+     * @param event
+     */
     @FXML
     private void HandleSecondDerivativesButtonAction(final ActionEvent event) {
 
@@ -151,6 +164,9 @@ public class MainAppController implements Initializable {
 
     }
 
+    /**
+     * @param event
+     */
     @FXML
     private void handleClearButtonAction(final ActionEvent event) {
 
@@ -165,6 +181,10 @@ public class MainAppController implements Initializable {
         XIntersectionContent.setText("");
 
     }
+
+    /**
+     * @param event
+     */
     @FXML
     private void handleStageClearButton(final ActionEvent event) {
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
@@ -172,6 +192,10 @@ public class MainAppController implements Initializable {
     }
 
 
+    /**
+     * @param actionEvent
+     * @throws IOException
+     */
     public void ExportToPdf(ActionEvent actionEvent) throws IOException {
         MathPower math = new MathPower(_equation);
         FileWriter fileWriter = new FileWriter(_equation,
@@ -184,6 +208,10 @@ public class MainAppController implements Initializable {
         fileWriter.WriteToPdf(fileWriter,PathFileExtension);
     }
 
+    /**
+     * @param actionEvent
+     * @throws IOException
+     */
     public void ExportToExcel(ActionEvent actionEvent) throws IOException {
         MathPower math = new MathPower(_equation);
         FileWriter fileWriter = new FileWriter(_equation,
@@ -198,22 +226,37 @@ public class MainAppController implements Initializable {
     }
 
 
+    /**
+     * @param actionEvent
+     */
     public void ExtremaCopyToClipboard(ActionEvent actionEvent) {
         clip.CopyToClipboard(ExtremaContent.getText(), errorText);
     }
 
+    /**
+     * @param actionEvent
+     */
     public void RootsCopyToClipboard(ActionEvent actionEvent) {
         clip.CopyToClipboard(RootsContent.getText(), errorText);
     }
 
+    /**
+     * @param actionEvent
+     */
     public void InflectionCopyToClipboard(ActionEvent actionEvent) {
         clip.CopyToClipboard(InflectionContent.getText(), errorText);
     }
 
+    /**
+     * @param actionEvent
+     */
     public void YIntersectionCopyToClipboard(ActionEvent actionEvent) {
         clip.CopyToClipboard(YIntersectionContent.getText(), errorText);
     }
 
+    /**
+     * @param actionEvent
+     */
     public void XIntersectionCopyToClipboard(ActionEvent actionEvent) {
         clip.CopyToClipboard(XIntersectionContent.getText(), errorText);
     }
