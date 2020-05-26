@@ -28,12 +28,12 @@ public class FileWriter {
     private List<double[]> XIntersectionPoints;
 
     /**
-     * @param equation
-     * @param InflectionPoints
-     * @param ExtremaPoints
-     * @param RootPoints
-     * @param YIntersectionPoint
-     * @param XIntersectionPoints
+     * @param equation setting the equation
+     * @param InflectionPoints setting the InflectionPoints
+     * @param ExtremaPoints setting the ExtremaPoints
+     * @param RootPoints setting the RootPoints
+     * @param YIntersectionPoint setting the YIntersectionPoint
+     * @param XIntersectionPoints setting the XIntersectionPoints
      */
     public FileWriter(String equation,
                       List<double[]> InflectionPoints,
@@ -52,11 +52,11 @@ public class FileWriter {
     }
 
     /**
-     * @param curve
-     * @param excelFilePath
+     * @param curve is the object that you want to write to excel
+     * @param filePath filepath where the file should be saved
      * @throws IOException
      */
-    public void WriteToExcel(FileWriter curve, String excelFilePath) throws IOException {
+    public void WriteToExcel(FileWriter curve, String filePath) throws IOException {
 
         Workbook workbook = new XSSFWorkbook();
         Sheet sheet = workbook.createSheet();
@@ -101,7 +101,7 @@ public class FileWriter {
         var setXIntersectionPoints = secondRow.createCell(5);
         setXIntersectionPoints.setCellValue(Formatter.Format(curve.XIntersectionPoints));
 
-        try (FileOutputStream outputStream = new FileOutputStream(excelFilePath)) {
+        try (FileOutputStream outputStream = new FileOutputStream(filePath)) {
 
             workbook.write(outputStream);
 
@@ -115,8 +115,8 @@ public class FileWriter {
 
 
     /**
-     * @param curve
-     * @param filepath
+     * @param curve is the object that you want to write to pdf
+     * @param filepath filepath where the file should be saved
      * @throws IOException
      */
     public void WriteToPdf(FileWriter curve, String filepath) throws IOException {
@@ -146,10 +146,10 @@ public class FileWriter {
     }
 
     /**
-     * @param title
-     * @param initName
-     * @param format
-     * @param stage
+     * @param title sets the title for filechooser window
+     * @param initName sets the inital name for the file
+     * @param format sets the file format
+     * @param stage sets the window from where the filechooser opens
      * @return
      */
     public String ChooseDirectory(String title, String initName, String format, Window stage) {

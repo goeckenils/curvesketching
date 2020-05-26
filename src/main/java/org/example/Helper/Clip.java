@@ -11,8 +11,8 @@ import java.util.TimerTask;
 public class Clip {
 
     /**
-     * @param toCopy 
-     * @param pushnotification
+     * @param toCopy the text you want to get on the clipboard
+     * @param pushnotification this is the text that makes the notification
      */
     public void CopyToClipboard(String toCopy, Text pushnotification){
         StringSelection stringSelection = new StringSelection(toCopy);

@@ -16,6 +16,10 @@ public class Main extends Application {
     private double xoffset;
     private double yoffset;
 
+    /**
+     * @param primaryStage is the inital stage to start
+     * @throws IOException
+     */
     @Override
     public void start(Stage primaryStage) throws IOException {
 

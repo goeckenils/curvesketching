@@ -7,8 +7,8 @@ import java.util.List;
     public class Formatter{
 
         /**
-         * @param array
-         * @return
+         * @param array the list you want to format
+         * @return it returns the list as a string
          */
         public static String Format(List<double[]> array) {
 

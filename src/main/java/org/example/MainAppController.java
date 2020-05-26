@@ -62,7 +62,7 @@ public class MainAppController implements Initializable {
 
 
     /**
-     * @param event
+     * @param event Writes the data to the GUI
      */
     @FXML
     private void handleSquaredButtonAction(final ActionEvent event) {
@@ -102,7 +102,7 @@ public class MainAppController implements Initializable {
 
 
     /**
-     *
+     * Set the border to red
      */
     private void SetError() {
 
@@ -134,7 +134,7 @@ public class MainAppController implements Initializable {
     }
 
     /**
-     * @param event
+     * @param event generates the plotline for the graph
      */
     @FXML
     private void HandleFirstDerivativesButtonAction(final ActionEvent event) {
@@ -165,7 +165,7 @@ public class MainAppController implements Initializable {
     }
 
     /**
-     * @param event
+     * @param event clears the data out of GUI
      */
     @FXML
     private void handleClearButtonAction(final ActionEvent event) {
@@ -183,7 +183,7 @@ public class MainAppController implements Initializable {
     }
 
     /**
-     * @param event
+     * @param event is closing the window
      */
     @FXML
     private void handleStageClearButton(final ActionEvent event) {
@@ -193,7 +193,7 @@ public class MainAppController implements Initializable {
 
 
     /**
-     * @param actionEvent
+     * @param actionEvent export the data to an pdf document
      * @throws IOException
      */
     public void ExportToPdf(ActionEvent actionEvent) throws IOException {
@@ -209,7 +209,7 @@ public class MainAppController implements Initializable {
     }
 
     /**
-     * @param actionEvent
+     * @param actionEvent export the data to an excel document
      * @throws IOException
      */
     public void ExportToExcel(ActionEvent actionEvent) throws IOException {
@@ -227,35 +227,35 @@ public class MainAppController implements Initializable {
 
 
     /**
-     * @param actionEvent
+     * @param actionEvent Copys the content to the clipboard
      */
     public void ExtremaCopyToClipboard(ActionEvent actionEvent) {
         clip.CopyToClipboard(ExtremaContent.getText(), errorText);
     }
 
     /**
-     * @param actionEvent
+     * @param actionEvent Copys the content to the clipboard
      */
     public void RootsCopyToClipboard(ActionEvent actionEvent) {
         clip.CopyToClipboard(RootsContent.getText(), errorText);
     }
 
     /**
-     * @param actionEvent
+     * @param actionEvent Copys the content to the clipboard
      */
     public void InflectionCopyToClipboard(ActionEvent actionEvent) {
         clip.CopyToClipboard(InflectionContent.getText(), errorText);
     }
 
     /**
-     * @param actionEvent
+     * @param actionEvent Copys the content to the clipboard
      */
     public void YIntersectionCopyToClipboard(ActionEvent actionEvent) {
         clip.CopyToClipboard(YIntersectionContent.getText(), errorText);
     }
 
     /**
-     * @param actionEvent
+     * @param actionEvent Copys the content to the clipboard
      */
     public void XIntersectionCopyToClipboard(ActionEvent actionEvent) {
         clip.CopyToClipboard(XIntersectionContent.getText(), errorText);
