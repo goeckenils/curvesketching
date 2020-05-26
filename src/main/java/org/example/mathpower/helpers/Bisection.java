@@ -4,74 +4,88 @@ import java.util.List;
 
 public class Bisection {
 
-    protected double ReturnBisectionValues(double[] lowerCheck, double[] upperCheck, List<double[]> formulaData) {
+    /**
+     * Calculates and returns a value which approach a x-value of a root point.
+     * @param lowerLimitation   lower limitation for the biscetion
+     * @param upperLimitation   upper limitation for the bisection
+     * @param formulaData       list of double arrays with multiplier and grades of the formula
+     * @return                  a value which approach a x-value of a root point
+     */
+    protected double ReturnBisectionValues(double[] lowerLimitation, double[] upperLimitation, List<double[]> formulaData) {
 
         double yValue;
         double rootPoint = 0;
-        double middleValueCheck;
+        double average;
 
-        for (int count = 0; count <= 50; count++) {
+        //Does the bisection 25 times. Only breaks when the for-loop ends or the current y-value is equal zero.
+        for (int count = 0; count <= 25; count++) {
 
-            middleValueCheck = (lowerCheck[0] + upperCheck[0]) / 2;
-            yValue = 0;
+            average = (lowerLimitation[0] + upperLimitation[0]) / 2; //Get the average of the lower- and upper-cap of the bisection.
+            yValue = 0; //resets the y-value to zero.
 
-            for (var data : formulaData) {
+            //Calculate the y-value with the new average
+            for (var part : formulaData) {
 
-                if (data[1] != 0) {
+                //Checks if the current grade of the part of the formulaData is not zero.
+                if (part[1] != 0) {
 
-                    if (data[0] != 0)
-                        yValue += data[0] * Math.pow(middleValueCheck, data[1]);
+                    //Checks if the current multiplier of the part of the formulaData is not zero.
+                    if (part[0] != 0)
+                        yValue += part[0] * Math.pow(average, part[1]); //Adds the result of multiplier times the average-exponent-grade (m*a^e) to the current value of y.
                     else
-                        yValue += Math.pow(middleValueCheck, data[1]);
+                        yValue += Math.pow(average, part[1]); //Adds the results of average-exponent-grade (a^e) to the current value of y.
 
                 } else {
 
-                    yValue += data[0];
+                    yValue += part[0]; //Adds the value of the multiplier to the current value of y.
 
                 }
 
             }
 
+            //Checks if the y-value is equal zero. If not the condition checks if the current y-value is negative.
             if (yValue == 0) {
 
-                rootPoint = middleValueCheck;
-                break;
+                rootPoint = average; //Set the current x-value as the root point.
+                break; //Breaks the for-loop to return the current root point
 
             } else if (String.valueOf(yValue).startsWith("-")) {
 
-                if (!String.valueOf(upperCheck[1]).startsWith("-")) {
+                //Checks if the y-value of the upper-cap of the bisection is positive.
+                if (!String.valueOf(upperLimitation[1]).startsWith("-")) {
 
-                    lowerCheck[0] = middleValueCheck;
-                    lowerCheck[1] = yValue;
+                    lowerLimitation[0] = average; //Sets the current average as the x-value of the lower-cap
+                    lowerLimitation[1] = yValue; //Sets the current y-value as the y-value of the lower-cap
 
                 } else {
 
-                    upperCheck[0] = middleValueCheck;
-                    upperCheck[1] = yValue;
+                    upperLimitation[0] = average; //Sets the current average as the x-value of the upper-cap
+                    upperLimitation[1] = yValue; //Sets the current y-value as the y-value of the upper-cap
 
                 }
 
             } else {
 
-                if (String.valueOf(upperCheck[1]).startsWith("-")) {
+                //Checks if the y-value of the upper-cap of the bisection is negative.
+                if (String.valueOf(upperLimitation[1]).startsWith("-")) {
 
-                    lowerCheck[0] = middleValueCheck;
-                    lowerCheck[1] = yValue;
+                    lowerLimitation[0] = average; //Sets the current average as the x-value of the lower-cap
+                    lowerLimitation[1] = yValue; //Sets the current y-value as the y-value of the lower-cap
 
                 } else {
 
-                    upperCheck[0] = middleValueCheck;
-                    upperCheck[1] = yValue;
+                    upperLimitation[0] = average; //Sets the current average as the x-value of the upper-cap
+                    upperLimitation[1] = yValue; //Sets the current y-value as the y-value of the upper-cap
 
                 }
 
             }
 
-            rootPoint = middleValueCheck;
+            rootPoint = average; //Sets the current x-value as the root point
 
         }
 
-        return rootPoint;
+        return rootPoint; //Returns a x-value which is near a root point
 
     }
 

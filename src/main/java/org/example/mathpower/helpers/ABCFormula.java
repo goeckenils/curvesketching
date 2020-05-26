@@ -10,8 +10,8 @@ public class ABCFormula {
         double b = formulaData.get(1)[0] == 0 ? 1 : formulaData.get(1)[0];
         double c = formulaData.get(2)[0];
 
-        double checkNegativeValue = Math.pow(b, 2) - 4 * (a * c);
-        double formalUp = Math.sqrt(checkNegativeValue);
+        double calculation = Math.pow(b, 2) - 4 * (a * c);
+        double formalUp = Math.sqrt(calculation);
         double formalDown = 2 * a;
         double negatedB = -b;
 
