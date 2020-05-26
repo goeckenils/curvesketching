@@ -10,6 +10,10 @@ import java.util.TimerTask;
 
 public class Clip {
 
+    /**
+     * @param toCopy 
+     * @param pushnotification
+     */
     public void CopyToClipboard(String toCopy, Text pushnotification){
         StringSelection stringSelection = new StringSelection(toCopy);
         if(toCopy.equals("")) {

@@ -27,6 +27,14 @@ public class FileWriter {
     private double YIntersectionPoint;
     private List<double[]> XIntersectionPoints;
 
+    /**
+     * @param equation
+     * @param InflectionPoints
+     * @param ExtremaPoints
+     * @param RootPoints
+     * @param YIntersectionPoint
+     * @param XIntersectionPoints
+     */
     public FileWriter(String equation,
                       List<double[]> InflectionPoints,
                       List<double[]> ExtremaPoints,
@@ -43,6 +51,11 @@ public class FileWriter {
 
     }
 
+    /**
+     * @param curve
+     * @param excelFilePath
+     * @throws IOException
+     */
     public void WriteToExcel(FileWriter curve, String excelFilePath) throws IOException {
 
         Workbook workbook = new XSSFWorkbook();
@@ -99,6 +112,13 @@ public class FileWriter {
         }
 
     }
+
+
+    /**
+     * @param curve
+     * @param filepath
+     * @throws IOException
+     */
     public void WriteToPdf(FileWriter curve, String filepath) throws IOException {
         Document document = new Document(40,60,40,60);
 
@@ -125,6 +145,13 @@ public class FileWriter {
         }
     }
 
+    /**
+     * @param title
+     * @param initName
+     * @param format
+     * @param stage
+     * @return
+     */
     public String ChooseDirectory(String title, String initName, String format, Window stage) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle(title);

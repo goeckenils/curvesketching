@@ -6,6 +6,10 @@ import java.util.List;
 
     public class Formatter{
 
+        /**
+         * @param array
+         * @return
+         */
         public static String Format(List<double[]> array) {
 
             List<String> strings = new ArrayList<String>();
