@@ -9,7 +9,6 @@ Hinweis (optional):
  
 Das Programm darf gerne auch mithilfe von Swing oder Java FX umgesetzt werden.   
   
-  
 # Dokumentation
 
 Eine Auflistung aller der im Projekt verwendeten Technologien
@@ -47,8 +46,8 @@ Innerhalb unseres Java-Projektes habe ich ein Package erstellt, welches die Abfr
 - [x] Wendepunkte
 - [ ] Asymptoten
 
-Leider ist durch die manuelle Programmierung das nachführen einer Validierung von gebrochenrationalen- und e-Funktionen nur schwierig möglich. Um ein möglich gutes Ergebnis zu erzielen, habe ich mich somit zuerst auf die ersten drei Punkten fokossiert, da die mathematische Bearbeitung mitunter vollkommen (neben der Validierung) von den oben genannten Funktionen abweicht.
+Leider ist durch die manuelle Programmierung das Nachführen einer Validierung von gebrochenrationalen- und e-Funktionen nur schwierig möglich. Um ein möglichst gutes und richtiges Ergebnis zu erzielen, habe ich mich somit zuerst auf die ersten drei Punkte fokossiert, da zudem die mathematische Bearbeitung vollkommen von den oben genannten Funktionen abweicht.
 
 - [x] Brüche
 
-Leider weichen die Ergebnisse von den Funktionen, welche Brüche enthalten von korrekten Kalkulationen von zum Beispiel [GeoGebra](https://www.geogebra.org/graphing) ab. Dies liegt vermutlich an den begrenzten Nachkommerstellen von Doubles. Innerhalb der Methoden wird nicht mit den Brüchen gerechnet, sondern mit Ergebnissen dieser als Dezimalzahlen, weshalb dieser Fehler auftreten kann.
+Die Ergebnisse von den Funktionen, welche Brüche enthalten, weichen mitunter von den korrekten Kalkulationen von [GeoGebra](https://www.geogebra.org/graphing) ab. Innerhalb der Methoden wird nicht mit den Brüchen gerechnet, sondern mit Ergebnissen dieser als Dezimalzahlen in Doubles, weshalb dieser Fehler auftreten kann.
