@@ -6,6 +6,11 @@ import java.util.List;
 
 public class FormulaValidator {
 
+    /**
+     *
+     * @param formula
+     * @return
+     */
     public List<double[]> GetFormulaValues(String formula) {
 
         List<String> dataFormula = new ArrayList<>();
@@ -130,12 +135,22 @@ public class FormulaValidator {
         return dataResult;
     }
 
+    /**
+     *
+     * @param tempFormulaString
+     * @return
+     */
     private List<String> FractionValues(String tempFormulaString) {
 
         return Arrays.asList(tempFormulaString.split("\\(*\\)*")).subList(2, 5);
 
     }
 
+    /**
+     *
+     * @param fractionValues
+     * @return
+     */
     private String FractionValue(List<String> fractionValues) {
 
         return String.valueOf(Double.valueOf(fractionValues.get(0)) / (Double.valueOf(fractionValues.get(2))));

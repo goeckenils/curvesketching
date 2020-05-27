@@ -1,19 +1,29 @@
 package org.example.mathpower.points;
 
+import org.example.mathpower.MathPower;
+
 import java.util.ArrayList;
 import java.util.List;
 
-class IntersectionPoints {
+public class IntersectionPoints {
 
-    private Points points;
+    private MathPower math;
 
-    protected IntersectionPoints(Points Points) { points = Points; }
+    /**
+     * Injection of dependencies to build the class.
+     * @param math injection of the class MathPower to use their properties.
+     */
+    public IntersectionPoints(MathPower math) { this.math = math; }
 
-    protected double ReturnYPoint() {
+    /**
+     * Calculates the intersection point of the graph with the y-axis.
+     * @return a double value which indicates the y-intersection point.
+     */
+    public double ReturnYPoint() {
 
         double yIntersectionPoint = 0;
 
-        for (var data: points.math.formulaData) {
+        for (var data: math.formulaData) {
 
             yIntersectionPoint = data[1] == 0 ? data[0] : 0;
 
@@ -23,7 +33,14 @@ class IntersectionPoints {
 
     }
 
-    protected List<double[]> ReturnXPoints(double xSteps, double lowerCap, double upperCap) {
+    /**
+     * Calculates the value table of the graph. The steps on the x-axis are responsible for the amount of values withing the table.
+     * @param xSteps        specifies the gap between each x-value on the x-axis.
+     * @param lowerCap      specifies the lower boundary of the value table and the start of the steps on the x-axis.
+     * @param upperCap      specifies the upper boundary of the value table which must not be a exact value.
+     * @return              a list of double arrays with the exact coordinates of the points of the graph within the system of coordinates.
+     */
+    public List<double[]> ReturnXPoints(double xSteps, double lowerCap, double upperCap) {
 
         List<double[]> result = new ArrayList<>();
         double xValue;
@@ -32,7 +49,7 @@ class IntersectionPoints {
 
             result.add(new double[] {
                 xValue,
-                points.yValue.GetYValue(points.math.formulaData, xValue)
+                math.yValue.GetYValue(math.formulaData, xValue)
             });
 
         }

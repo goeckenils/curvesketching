@@ -5,6 +5,11 @@ import java.util.List;
 
 public class HornerSchema {
 
+    /**
+     *
+     * @param formulaData
+     * @return
+     */
     public List<Double> ReturnHornerSchemaResults(List<double[]> formulaData) {
 
         ABCFormula abcFormula = new ABCFormula();
@@ -57,6 +62,12 @@ public class HornerSchema {
 
     }
 
+    /**
+     *
+     * @param formulaData
+     * @param guessedRootPoint
+     * @return
+     */
     protected List<double[]> HornerSchema(List<double[]> formulaData, double guessedRootPoint) {
 
         List<double[]> newFormula = new ArrayList<>();
@@ -144,6 +155,11 @@ public class HornerSchema {
 
     }
 
+    /**
+     *
+     * @param formulaData
+     * @return
+     */
     protected double GuessARootPoint(List<double[]> formulaData) {
 
         YValue yValues = new YValue();

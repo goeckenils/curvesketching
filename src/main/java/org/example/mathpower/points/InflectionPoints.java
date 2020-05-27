@@ -1,63 +1,73 @@
 package org.example.mathpower.points;
 
+import org.example.mathpower.MathPower;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class InflectionPoints {
 
-    private Points points;
+    private MathPower math;
 
-    protected InflectionPoints(Points Points) { points = Points; }
+    /**
+     * Injection of dependencies to build the class.
+     * @param math injection of the class MathPower to use their properties.
+     */
+    public InflectionPoints(MathPower math) { this.math = math; }
 
-    protected List<double[]> ReturnInflectionPoints() {
+    /**
+     * Arranges the second derivative of the formula and returns inflection points if available.
+     * @return a list of double arrays with the position of the extreme point.
+     */
+    public List<double[]> ReturnInflectionPoints() {
 
         List<double[]> inflectionPoints = new ArrayList<>();
 
-        if (points.math.thirdDerivative.size() == 0 ||
-            points.math.thirdDerivative.get(0)[1] > 0 ||
-            points.math.thirdDerivative.get(0)[0] == 0 ||
-            points.math.secondDerivative.size() == 0)
+        if (math.thirdDerivative.size() == 0 ||
+            math.thirdDerivative.get(0)[1] > 0 ||
+            math.thirdDerivative.get(0)[0] == 0 ||
+            math.secondDerivative.size() == 0)
             return inflectionPoints;
 
-        double grade = points.math.secondDerivative.get(0)[1];
+        double grade = math.secondDerivative.get(0)[1];
 
         if (grade == 0)
             return inflectionPoints;
 
-        if (points.math.secondDerivative.size() == 1) {
+        if (math.secondDerivative.size() == 1) {
 
             inflectionPoints.add(new double[] {
                     0,
-                    points.yValue.GetYValue(points.math.formulaData, 0)
+                    math.yValue.GetYValue(math.formulaData, 0)
             });
 
         } else {
 
             if (grade >= 3) {
 
-                for (var rootPoint: points.hornerSchema.ReturnHornerSchemaResults(points.math.secondDerivative))
+                for (var rootPoint: math.hornerSchema.ReturnHornerSchemaResults(math.secondDerivative))
                     if (Double.isFinite(rootPoint))
                         inflectionPoints.add(new double[] {
                                 rootPoint,
-                                points.yValue.GetYValue(points.math.formulaData, rootPoint)
+                                math.yValue.GetYValue(math.formulaData, rootPoint)
                         });
 
             } else if (grade == 2) {
 
-                for (var rootPoint: points.x2.GetRootPoints(points.math.secondDerivative))
+                for (var rootPoint: math.x2.GetRootPoints(math.secondDerivative))
                     if (Double.isFinite(rootPoint))
                         inflectionPoints.add(new double[] {
                                 rootPoint,
-                                points.yValue.GetYValue(points.math.formulaData, rootPoint)
+                                math.yValue.GetYValue(math.formulaData, rootPoint)
                         });
 
             } else if (grade == 1) {
 
-                double inflectionPoint = points.x1.GetRootPoint(points.math.secondDerivative);
+                double inflectionPoint = math.x1.GetRootPoint(math.secondDerivative);
 
                 inflectionPoints.add(new double[]{
                         inflectionPoint,
-                        points.yValue.GetYValue(points.math.formulaData, inflectionPoint)
+                        math.yValue.GetYValue(math.formulaData, inflectionPoint)
                 });
 
             }

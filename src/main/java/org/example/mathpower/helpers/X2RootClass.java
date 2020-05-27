@@ -7,6 +7,11 @@ public class X2RootClass {
 
     private final ABCFormula abcFormula = new ABCFormula();
 
+    /**
+     *
+     * @param formulaData
+     * @return
+     */
     public List<Double> GetRootPoints(List<double[]> formulaData) {
 
         List<Double> rootPoints = new ArrayList<>();

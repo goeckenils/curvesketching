@@ -1,8 +1,7 @@
 package org.example.mathpower;
 
+import org.example.mathpower.helpers.*;
 import org.example.mathpower.points.*;
-import org.example.mathpower.helpers.Derivatives;
-import org.example.mathpower.helpers.FormulaValidator;
 
 import java.util.List;
 
@@ -13,11 +12,22 @@ public class MathPower {
     public List<double[]> secondDerivative;
     public List<double[]> thirdDerivative;
     public String formula;
+    public X1RootClass x1;
+    public X2RootClass x2;
+    public YValue yValue;
+    public HornerSchema hornerSchema;
+    public FormulaValidator formulaValidator;
+    public Derivatives derivatives;
 
-    private final Points points = new Points(MathPower.this);
-    private final FormulaValidator formulaValidator = new FormulaValidator();
-    private final Derivatives derivatives = new Derivatives();
+    private ExtremePoints extremePoints;
+    private InflectionPoints inflectionPoints;
+    private RootPoints rootPoints;
+    private IntersectionPoints intersectionPoints;
 
+    /**
+     * Constructor of the MathPower class which includes methods to get necessary information of the graph.
+     * @param formula representing the user input of a string which contains a mathematical formula. Yet not validated.
+     */
     public MathPower(String formula) {
 
         this.formula = formula;
@@ -28,18 +38,41 @@ public class MathPower {
 
     }
 
-    public List<double[]> GetRootPoints() { return  points.GetRootPoints(); }
+    /**
+     * Getter of a list of positions of possible root points.
+     * @return a list of double arrays which include the positions of possible root points.
+     */
+    public List<double[]> GetRootPoints() { return rootPoints.ReturnRootPoints(); }
 
-    public List<double[]> GetExtremaPoints() { return points.GetExtremePoints(); }
+    /**
+     * Getter of a list of positions of possible extreme points.
+     * @return a list of double arrays which include the positions of possible extreme points.
+     */
+    public List<double[]> GetExtremaPoints() { return extremePoints.ReturnExtremenPoints(); }
 
-    public List<double[]> GetInflectionPoints() { return points.GetInflectionPoints(); }
+    /**
+     * Getter of a list of positions of possible inflection points.
+     * @return a list of double arrays which include the positions of possible inflection points.
+     */
+    public List<double[]> GetInflectionPoints() { return inflectionPoints.ReturnInflectionPoints(); }
 
+    /**
+     * Getter to return a list of positions in the coordinate system calculate with the formula and defined steps and boundaries.
+     * @param xSteps        specifies the gap between each x-value on the x-axis.
+     * @param lowerCap      specifies the lower boundary of the value table and the start of the steps on the x-axis.
+     * @param upperCap      specifies the upper boundary of the value table which must not be a exact value.
+     * @return              a list of double arrays with the exact coordinates of the points of the graph within the system of coordinates.
+     */
     public List<double[]> GetXIntersectionPoints(double xSteps, double lowerCap, double upperCap) {
 
-        return points.GetXPoints(xSteps, lowerCap, upperCap);
+        return intersectionPoints.ReturnXPoints(xSteps, lowerCap, upperCap);
 
     }
 
-    public double GetYIntersectionPoint() { return points.GetYPoint(); }
+    /**
+     * Getter to return intersection points on the y-axis.
+     * @return a double value with indicates a intersection on the y-axis.
+     */
+    public double GetYIntersectionPoint() { return intersectionPoints.ReturnYPoint(); }
 
 }

@@ -49,7 +49,7 @@ public class Bisection {
                 rootPoint = average; //Set the current x-value as the root point.
                 break; //Breaks the for-loop to return the current root point
 
-            } else if (String.valueOf(yValue).startsWith("-")) {
+            } else if (String.valueOf(yValue).startsWith("-")) { //The following conditions are part of the bisection method. See https://en.wikipedia.org/wiki/Bisection_method.
 
                 //Checks if the y-value of the upper-cap of the bisection is positive.
                 if (!String.valueOf(upperLimitation[1]).startsWith("-")) {

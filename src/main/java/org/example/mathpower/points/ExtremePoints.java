@@ -1,60 +1,70 @@
 package org.example.mathpower.points;
 
+import org.example.mathpower.MathPower;
+
 import java.util.ArrayList;
 import java.util.List;
 
-class ExtremePoints {
+public class ExtremePoints {
 
-    private Points points;
+    private MathPower math;
 
-    protected ExtremePoints(Points Points) { points = Points; }
+    /**
+     * Injection of dependencies to build the class.
+     * @param math injection of the class MathPower to use their properties.
+     */
+    public ExtremePoints(MathPower math) { this.math = math; }
 
-    protected List<double[]> ReturnExtremenPoints() {
+    /**
+     * Arranges the first derivative of the formula and returns extreme points if available.
+     * @return a list of double arrays with the position of the extreme point.
+     */
+    public List<double[]> ReturnExtremenPoints() {
 
         List<double[]> extremaPoints = new ArrayList<>();
 
-        double grade = points.math.firstDerivative.get(0)[1];
+        double grade = math.firstDerivative.get(0)[1];
 
         if (grade == 0)
             return extremaPoints;
 
-        if (points.math.firstDerivative.size() == 1) {
+        if (math.firstDerivative.size() == 1) {
 
-            double[] lastValue = points.math.secondDerivative.get(points.math.secondDerivative.size() - 1);
+            double[] lastValue = math.secondDerivative.get(math.secondDerivative.size() - 1);
 
             if (lastValue[0] != 0 && lastValue[1] != 0)
                 extremaPoints.add(new double[] {
                         0,
-                        points.yValue.GetYValue(points.math.formulaData, 0)
+                        math.yValue.GetYValue(math.formulaData, 0)
                 });
 
         } else {
 
             if (grade >= 3) {
 
-                for (var rootPoint: points.hornerSchema.ReturnHornerSchemaResults(points.math.firstDerivative))
+                for (var rootPoint: math.hornerSchema.ReturnHornerSchemaResults(math.firstDerivative))
                     if (Double.isFinite(rootPoint))
                         extremaPoints.add(new double[] {
                                 rootPoint,
-                                points.yValue.GetYValue(points.math.formulaData, rootPoint)
+                                math.yValue.GetYValue(math.formulaData, rootPoint)
                         });
 
             } else if (grade == 2) {
 
-                for (var rootPoint: points.x2.GetRootPoints(points.math.firstDerivative))
+                for (var rootPoint: math.x2.GetRootPoints(math.firstDerivative))
                     if (Double.isFinite(rootPoint))
                         extremaPoints.add(new double[] {
                                 rootPoint,
-                                points.yValue.GetYValue(points.math.formulaData, rootPoint)
+                                math.yValue.GetYValue(math.formulaData, rootPoint)
                         });
 
             } else if (grade == 1) {
 
-                double extremaPoint = points.x1.GetRootPoint(points.math.firstDerivative);
+                double extremaPoint = math.x1.GetRootPoint(math.firstDerivative);
 
                 extremaPoints.add(new double[]{
                         extremaPoint,
-                        points.yValue.GetYValue(points.math.formulaData, extremaPoint)
+                        math.yValue.GetYValue(math.formulaData, extremaPoint)
                 });
 
             }

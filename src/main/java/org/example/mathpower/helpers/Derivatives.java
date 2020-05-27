@@ -5,6 +5,11 @@ import java.util.List;
 
 public class Derivatives {
 
+    /**
+     *
+     * @param inputData
+     * @return
+     */
     public List<double[]> GetDerivative(List<double[]> inputData) {
 
         List<double[]> derivative = new ArrayList<>();

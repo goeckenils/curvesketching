@@ -4,6 +4,11 @@ import java.util.List;
 
 public class X1RootClass {
 
+    /**
+     *
+     * @param formulaData
+     * @return
+     */
     public double GetRootPoint(List<double[]> formulaData) {
 
         double tempResult = -formulaData.get(1)[0];
