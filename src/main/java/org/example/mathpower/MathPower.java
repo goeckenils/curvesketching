@@ -12,17 +12,17 @@ public class MathPower {
     public List<double[]> secondDerivative;
     public List<double[]> thirdDerivative;
     public String formula;
-    public X1RootClass x1;
-    public X2RootClass x2;
-    public YValue yValue;
-    public HornerSchema hornerSchema;
-    public FormulaValidator formulaValidator;
-    public Derivatives derivatives;
+    public X1RootClass x1 = new X1RootClass();
+    public X2RootClass x2 = new X2RootClass();
+    public YValue yValue = new YValue();
+    public HornerSchema hornerSchema = new HornerSchema();
+    public FormulaValidator formulaValidator = new FormulaValidator();
+    public Derivatives derivatives = new Derivatives();
 
-    private ExtremePoints extremePoints;
-    private InflectionPoints inflectionPoints;
-    private RootPoints rootPoints;
-    private IntersectionPoints intersectionPoints;
+    private ExtremePoints extremePoints = new ExtremePoints(MathPower.this);
+    private InflectionPoints inflectionPoints = new InflectionPoints(MathPower.this);
+    private RootPoints rootPoints = new RootPoints(MathPower.this);
+    private IntersectionPoints intersectionPoints = new IntersectionPoints(MathPower.this);
 
     /**
      * Constructor of the MathPower class which includes methods to get necessary information of the graph.
