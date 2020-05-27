@@ -204,15 +204,8 @@ public class HornersMethod {
                         yCheckValues.get(0)[0] = xCount;
                         yCheckValues.get(0)[1] = yValue;
 
-                        if (yCheckValues.get(0)[1] < 0 && 0 < yCheckValues.get(1)[1]) {
-
-                            guessedRootPoint = bisection.ReturnBisectionValues(
-                                    yCheckValues.get(0),
-                                    yCheckValues.get(1),
-                                    formulaData);
-                            break;
-
-                        } else if (yCheckValues.get(1)[1] < 0 && 0 < yCheckValues.get(0)[1]) {
+                        if (yCheckValues.get(0)[1] < 0 && 0 < yCheckValues.get(1)[1] ||
+                            yCheckValues.get(1)[1] < 0 && 0 < yCheckValues.get(0)[1]) {
 
                             guessedRootPoint = bisection.ReturnBisectionValues(
                                     yCheckValues.get(1),

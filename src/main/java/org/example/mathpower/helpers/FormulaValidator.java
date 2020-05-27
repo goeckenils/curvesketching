@@ -15,6 +15,7 @@ public class FormulaValidator {
 
         List<String> dataFormula = new ArrayList<>();
         List<double[]> dataResult = new ArrayList<>();
+        int count = 0;
         String resultString;
         String[] formulaDataArray;
         Boolean firstNegative = false;
@@ -49,7 +50,8 @@ public class FormulaValidator {
 
                     } else {
 
-                        resultString = "-" + formulaData;
+                        resultString = count == 0 ? formulaData : "-" + formulaData;
+                        count++;
 
                     }
 
