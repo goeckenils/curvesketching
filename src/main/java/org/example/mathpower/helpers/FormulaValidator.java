@@ -7,9 +7,9 @@ import java.util.List;
 public class FormulaValidator {
 
     /**
-     *
-     * @param formula
-     * @return
+     * Validates the formula and returns the multiplier and grades.
+     * @param formula   user input of the mathematical formula as a string.
+     * @return          a list of double arrays which create a new set of specific combinations of multipliers and grades.
      */
     public List<double[]> GetFormulaValues(String formula) {
 
@@ -136,9 +136,9 @@ public class FormulaValidator {
     }
 
     /**
-     *
-     * @param tempFormulaString
-     * @return
+     * Returns the numerator and the denominator out of the given formula string with a fraction
+     * @param tempFormulaString     temporary string of the formula which includes the fraction.
+     * @return                      a list of string which includes the numerator, a slash and the denominator.
      */
     private List<String> FractionValues(String tempFormulaString) {
 
@@ -147,9 +147,9 @@ public class FormulaValidator {
     }
 
     /**
-     *
-     * @param fractionValues
-     * @return
+     * Calculates and return the result of the fraction of the given values.
+     * @param fractionValues    fraction values (numerator and denominator) of the current formula.
+     * @return                  a string which is the result of the fraction with the fractionValues.
      */
     private String FractionValue(List<String> fractionValues) {
 

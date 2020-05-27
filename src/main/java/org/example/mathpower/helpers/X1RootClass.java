@@ -5,9 +5,9 @@ import java.util.List;
 public class X1RootClass {
 
     /**
-     *
-     * @param formulaData
-     * @return
+     * Returns a root point of a formula with only one specific x without further attachments.
+     * @param formulaData   list of double arrays with multiplier and grades of the formula.
+     * @return              a double value which indicates the position of the root point.
      */
     public double GetRootPoint(List<double[]> formulaData) {
 

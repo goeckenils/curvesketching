@@ -45,7 +45,7 @@ public class InflectionPoints {
 
             if (grade >= 3) {
 
-                for (var rootPoint: math.hornerSchema.ReturnHornerSchemaResults(math.secondDerivative))
+                for (var rootPoint: math.hornersMethod.ReturnRootPointValues(math.secondDerivative))
                     if (Double.isFinite(rootPoint))
                         inflectionPoints.add(new double[] {
                                 rootPoint,

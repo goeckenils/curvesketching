@@ -3,14 +3,14 @@ package org.example.mathpower.helpers;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HornerSchema {
+public class HornersMethod {
 
     /**
-     *
-     * @param formulaData
-     * @return
+     * Returns the root points of the formula with a grade higher than three if available.
+     * @param formulaData   list of double arrays which includes the multipliers and grades of the formula.
+     * @return              a list of doubles which includes the x-values of the calculated root points.
      */
-    public List<Double> ReturnHornerSchemaResults(List<double[]> formulaData) {
+    public List<Double> ReturnRootPointValues(List<double[]> formulaData) {
 
         ABCFormula abcFormula = new ABCFormula();
         List<double[]> x2Values;
@@ -63,10 +63,10 @@ public class HornerSchema {
     }
 
     /**
-     *
-     * @param formulaData
-     * @param guessedRootPoint
-     * @return
+     * Calculates and return the root points through the horner's method.
+     * @param formulaData       list of double arrays which includes the multipliers and grades of the formula.
+     * @param guessedRootPoint  double value which includes a guessed root point of the formula.
+     * @return                  a list of double arrays which create a new set of specific combinations of multipliers and grades.
      */
     protected List<double[]> HornerSchema(List<double[]> formulaData, double guessedRootPoint) {
 
@@ -156,9 +156,9 @@ public class HornerSchema {
     }
 
     /**
-     *
-     * @param formulaData
-     * @return
+     * Guessed a root point with a try and error method or bisection.
+     * @param formulaData   list of double arrays which includes the multipliers and grades of the formula.
+     * @return              a double value of a guessed root point.
      */
     protected double GuessARootPoint(List<double[]> formulaData) {
 

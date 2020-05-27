@@ -32,7 +32,7 @@ public class RootPoints {
 
             if (grade >= 3) {
 
-                for (var rootPoint: math.hornerSchema.ReturnHornerSchemaResults(math.formulaData))
+                for (var rootPoint: math.hornersMethod.ReturnRootPointValues(math.formulaData))
                     if (Double.isFinite(rootPoint))
                         rootPoints.add(new double[] {
                                 rootPoint,

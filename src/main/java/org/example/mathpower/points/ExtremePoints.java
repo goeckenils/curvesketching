@@ -42,7 +42,7 @@ public class ExtremePoints {
 
             if (grade >= 3) {
 
-                for (var rootPoint: math.hornerSchema.ReturnHornerSchemaResults(math.firstDerivative))
+                for (var rootPoint: math.hornersMethod.ReturnRootPointValues(math.firstDerivative))
                     if (Double.isFinite(rootPoint))
                         extremaPoints.add(new double[] {
                                 rootPoint,

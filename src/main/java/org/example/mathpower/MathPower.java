@@ -15,7 +15,7 @@ public class MathPower {
     public X1RootClass x1 = new X1RootClass();
     public X2RootClass x2 = new X2RootClass();
     public YValue yValue = new YValue();
-    public HornerSchema hornerSchema = new HornerSchema();
+    public HornersMethod hornersMethod = new HornersMethod();
     public FormulaValidator formulaValidator = new FormulaValidator();
     public Derivatives derivatives = new Derivatives();
 

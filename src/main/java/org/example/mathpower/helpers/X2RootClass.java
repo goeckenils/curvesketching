@@ -8,9 +8,9 @@ public class X2RootClass {
     private final ABCFormula abcFormula = new ABCFormula();
 
     /**
-     *
-     * @param formulaData
-     * @return
+     * Arranges the formula and returns the root points if available.
+     * @param formulaData   list of double arrays with multiplier and grades of the formula.
+     * @return              a list of double arrays which indicates the position of the root points.
      */
     public List<Double> GetRootPoints(List<double[]> formulaData) {
 
