@@ -36,7 +36,19 @@ Innerhalb unseres Java-Projektes habe ich ein Package erstellt, welches die Abfr
 
 | Multiplikatoren  | Exponenten | Vorzeichen | Beispiele |
 | :------------- | :------------- | :-------------: | :-------------: |
-| (1/3) => (Zähler/Nenner) | 4 (ganzrationale Funktion) | + | (1/4)x^4+3x^2-10 `siehe Probleme`|
+| (1/3) => (Zähler/Nenner) | 4 (ganzrationale Funktion) | + | (1/4)x^4+3x^2-10 `siehe Backend-Probleme`|
 | 1-99  => (Ganze Zahlen) | 3 (kubische Funktion) | - | x^3+2x^2+5x+4 |
 |  | 2 (quadratische Funktion) |  | x^4+x-3 |
 |  | 1 (lineare Funktion) |  |  |
+
+## Backend-Probleme
+- [x] Schnittpunkte mit x- und y-Achse
+- [x] Extrempunkte
+- [x] Wendepunkte
+- [ ] Asymptoten
+
+Leider ist durch die manuelle Programmierung das nachführen einer Validierung von gebrochenrationalen- und e-Funktionen nur schwierig möglich. Um ein möglich gutes Ergebnis zu erzielen, habe ich mich somit zuerst auf die ersten drei Punkten fokossiert, da die mathematische Bearbeitung mitunter vollkommen (neben der Validierung) von den oben genannten Funktionen abweicht.
+
+- [x] Brüche
+
+Leider weichen die Ergebnisse von den Funktionen, welche Brüche enthalten von korrekten Kalkulationen von zum Beispiel [GeoGebra](https://www.geogebra.org/graphing) ab. Dies liegt vermutlich an den begrenzten Nachkommerstellen von Doubles. Innerhalb der Methoden wird nicht mit den Brüchen gerechnet, sondern mit Ergebnissen dieser als Dezimalzahlen, weshalb dieser Fehler auftreten kann.
