@@ -14,24 +14,21 @@ Das Programm darf gerne auch mithilfe von Swing oder Java FX umgesetzt werden.
 Eine Auflistung aller der im Projekt verwendeten Technologien
 
 ##  [JavaFX 14](https://openjfx.io/index.html)
-
 JavaFx wird verwendet für die Graphische Darstellung der Generierten Daten 
 
 
 ##  [Apache POI - the Java API for Microsoft Documents](https://poi.apache.org/index.html)
-
 Apache POI wird verwendet für das Schreiben der Daten in ein Excel (xlsx) Dokument.
 
 ## [Apache PDFBox  - A Java PDF Library](https://pdfbox.apache.org/)
-
 Apache PDFBox wird verwendet um die Daten in einer PDF Datei zu speichern.
 
 ## [Pdfbox - layout](https://github.com/ralfstuckert/pdfbox-layout)
 Als wir versuchten die normale PDFBox API anzusprechen viel auf das Formatierung nur limitiert zu verfügung stand. Abhilfe dabei schaffte PDFBox Layout die es uns ermöglichte das PDF Dokument vernünftig zu Strukturieren.
 
-# Backend
+# MathPower - Klasse für die Verarbeitung der mathematischen Funktionen
 
-Innerhalb unseres Java-Projektes habe ich ein Package erstellt, welches die Abfrage von den benötigten Ergebnissen stark vereinfacht. Die Klasse "MathPower" ist überliegende Klasse, welche durch das Einbringen von Abhängigkeiten der Hauptakteur innerhalb des Backends ist. Um an die Ergebnisse zu gelangen, muss innerhalb der Konstruktoren der jeweiligen Klasse die Abhängigkeiten von „MathPower“ eingebracht werden, weshalb ich mich für eine globale Auslagerung der Getter von den Ergebnissen auf die Klasse „MathPower“ beschränkt habe. Somit kann das Frontend über eine einzige Deklarierung dieser Klasse, mit der eingebrachten mathematischen Formel als Eigenschaft, alle Informationen zu den Graphen erfahren. Jegliche nicht validierbare Eingaben werden von dem „Try and Catch“ Block abgefangen und resultieren in einen Hinweis im Frontend für den Nutzer. Mögliche beziehungsweise validierbare Eingaben sind folgende: 
+Innerhalb unseres Java-Projektes habe ich ein Package erstellt, welches die Abfrage von den benötigten Ergebnissen stark vereinfacht. Die Klasse "MathPower" ist überliegende Klasse, welche durch das Einbringen von Abhängigkeiten der Hauptakteur innerhalb des Projektes ist. Um an die Ergebnisse zu gelangen, muss innerhalb der Konstruktoren der jeweiligen Klasse die Abhängigkeiten von „MathPower“ eingebracht werden, weshalb ich mich für eine globale Auslagerung der Getter von den Ergebnissen auf die Klasse „MathPower“ beschränkt habe. Somit kann das User-Interface über eine einzige Deklarierung dieser Klasse, mit der eingebrachten mathematischen Formel als Eigenschaft, alle Informationen zu den Graphen erfahren. Jegliche nicht validierbare Eingaben werden von dem „Try and Catch“ Block abgefangen und resultieren in einen Hinweis in dem User-Interface für den Nutzer. Mögliche beziehungsweise validierbare Eingaben sind folgende: 
 
 | Multiplikatoren  | Exponenten | Vorzeichen | Beispiele |
 | :------------- | :------------- | :-------------: | :-------------: |
