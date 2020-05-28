@@ -154,6 +154,24 @@ public class HornersMethod {
 
         }
 
+        if (formulaData.get(0)[1] > count) {
+
+            while (formulaData.get(0)[1] != count) {
+
+                double tempValue = newFormula.get((int) count - 1)[0];
+                grade = grade - 1;
+
+                newFormula.add(new double[]{
+                    0 + (guessedRootPoint * tempValue),
+                    grade
+                });
+
+                count++;
+
+            }
+
+        }
+
         return newFormula;
 
     }
