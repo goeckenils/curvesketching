@@ -43,7 +43,7 @@ Innerhalb unseres Java-Projektes habe ich ein Package erstellt, welches die Abfr
 - [x] Wendepunkte
 - [x] Brüche 
 
-Da dieses Feature sehr spät eingefügt wurde, konnten nicht alle möglichen Fälle getestet werden. Deshalb können die Werte mitunter abweichen. Zu beachten ist die Abrundung der Ergebnisse bis auf die dritte Nachkommastelle. Innerhalb des Horner Schemas wird mit einer zweiten Bruchzahl das Ergebnis deutlich verfälscht.
+Durch die späte Einbindung, können Abweichungen vorkommen. Dies bitte über Github Issues mitteilen.
 
 - [ ] Asymptoten
 
