@@ -26,9 +26,10 @@ Apache PDFBox wird verwendet um die Daten in einer PDF Datei zu speichern.
 ## [Pdfbox - layout](https://github.com/ralfstuckert/pdfbox-layout)
 Als wir versuchten die normale PDFBox API anzusprechen viel auf das Formatierung nur limitiert zu verfügung stand. Abhilfe dabei schaffte PDFBox Layout die es uns ermöglichte das PDF Dokument vernünftig zu Strukturieren.
 
-# MathPower - Klasse für die Verarbeitung der mathematischen Funktionen
+# MathPower 
+### Paket für die Verarbeitung der mathematischen Funktionen
 
-Innerhalb unseres Java-Projektes habe ich ein Package erstellt, welches die Abfrage von den benötigten Ergebnissen stark vereinfacht. Die Klasse "MathPower" ist überliegende Klasse, welche durch das Einbringen von Abhängigkeiten der Hauptakteur innerhalb des Projektes ist. Um an die Ergebnisse zu gelangen, muss innerhalb der Konstruktoren der jeweiligen Klasse die Abhängigkeiten von „MathPower“ eingebracht werden, weshalb ich mich für eine globale Auslagerung der Getter von den Ergebnissen auf die Klasse „MathPower“ beschränkt habe. Somit kann das User-Interface über eine einzige Deklarierung dieser Klasse, mit der eingebrachten mathematischen Formel als Eigenschaft, alle Informationen zu den Graphen erfahren. Jegliche nicht validierbare Eingaben werden von dem „Try and Catch“ Block abgefangen und resultieren in einen Hinweis in dem User-Interface für den Nutzer. Mögliche beziehungsweise validierbare Eingaben sind folgende: 
+Innerhalb unseres Java-Projektes habe ich ein Package erstellt, welches die Abfrage von den benötigten Ergebnissen stark vereinfacht. Die Klasse "MathPower" ist die überliegende Klasse, welche durch das Einbringen von Abhängigkeiten der Hauptakteur innerhalb des Projektes ist. Um an die Ergebnisse zu gelangen, muss innerhalb der Konstruktoren der jeweiligen Klasse die Abhängigkeiten von „MathPower“ eingebracht werden, weshalb ich mich für eine globale Auslagerung der Getter von den Ergebnissen auf die Klasse „MathPower“ beschränkt habe. Somit kann das User-Interface über eine einzige Deklarierung dieser Klasse, mit der eingebrachten mathematischen Formel als Eigenschaft, alle Informationen zu den Graphen erfahren. Jegliche nicht validierbare Eingaben werden von dem „Try and Catch“ Block abgefangen und resultieren in einen Hinweis in dem User-Interface für den Nutzer. Mögliche beziehungsweise validierbare Eingaben sind folgende: 
 
 | Multiplikatoren  | Exponenten | Vorzeichen | Beispiele |
 | :------------- | :------------- | :-------------: | :-------------: |
@@ -43,7 +44,7 @@ Innerhalb unseres Java-Projektes habe ich ein Package erstellt, welches die Abfr
 - [x] Wendepunkte
 - [x] Brüche 
 
-Durch die späte Einbindung, können Abweichungen vorkommen. Dies bitte über Github Issues mitteilen.
+Durch die späte Einbindung können Abweichungen vorkommen. Dies bitte über Github Issues mitteilen.
 
 - [ ] Asymptoten
 
