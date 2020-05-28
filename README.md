@@ -32,19 +32,19 @@ Innerhalb unseres Java-Projektes habe ich ein Package erstellt, welches die Abfr
 
 | Multiplikatoren  | Exponenten | Vorzeichen | Beispiele |
 | :------------- | :------------- | :-------------: | :-------------: |
-| (1/3) => (Zähler/Nenner) | 4 (ganzrationale Funktion) | + | (1/4)x^4+3x^2-10 `siehe Backend-Probleme`|
+| (1/3) => (Zähler/Nenner) | 4 (ganzrationale Funktion) | + | (1/4)x^4+3x^2-10 `siehe MathPower-Eigenschaften`|
 | 1-99  => (Ganze Zahlen) | 3 (kubische Funktion) | - | x^3+2x^2+5x+4 |
 |  | 2 (quadratische Funktion) |  | x^4+x-3 |
 |  | 1 (lineare Funktion) |  |  |
 
-## Backend-Probleme
+## MathPower-Eigenschaften
 - [x] Schnittpunkte mit x- und y-Achse
 - [x] Extrempunkte
 - [x] Wendepunkte
+- [x] Brüche 
+
+Da dieses Feature sehr spät eingefügt wurde, konnten nicht alle möglichen Fälle getestet werden. Deshalb können die Werte mitunter abweichen. Zu beachten ist die Abrundung der Ergebnisse bis auf die dritte Nachkommastelle.
+
 - [ ] Asymptoten
 
 Leider ist durch die manuelle Programmierung das Nachführen einer Validierung von gebrochenrationalen- und e-Funktionen nur schwierig möglich. Um ein möglichst gutes und richtiges Ergebnis zu erzielen, habe ich mich somit zuerst auf die ersten drei Punkte fokossiert, da zudem die mathematische Bearbeitung vollkommen von den oben genannten Funktionen abweicht.
-
-- [x] Brüche
-
-Die Ergebnisse von den Funktionen, welche Brüche enthalten, weichen mitunter von den korrekten Kalkulationen von [GeoGebra](https://www.geogebra.org/graphing) ab. Innerhalb der Methoden wird nicht mit den Brüchen gerechnet, sondern mit Ergebnissen dieser als Dezimalzahlen in Doubles, weshalb dieser Fehler auftreten kann.
