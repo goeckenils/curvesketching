@@ -10,6 +10,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.example.FileWriter.FileWriter;
 import org.example.Helper.Clip;
+import org.example.Helper.Formatter;
 import org.example.Helper.MyGraph;
 import org.example.mathpower.MathPower;
 
@@ -21,7 +22,7 @@ import java.util.ResourceBundle;
 import java.util.function.Function;
 
 public class MainAppController implements Initializable {
-
+    public Text ExtremaTitle;
     public Text ExtremaContent;
     public Text RootsContent;
     public Text InflectionContent;
@@ -29,6 +30,13 @@ public class MainAppController implements Initializable {
     public Button squaredButton;
     public Button HandleFirstDerivatives;
     public Button clearButton;
+    public Text RootsTitle;
+    public Text InflectionTitle;
+    public Text YIntersectionTitle;
+    public Button InflectionClip;
+    public Button IntersectionClip;
+    public Button RootsClip;
+    public Button ExtremaClip;
     private String _equation;
 
     private void SetEquation(String equation) { _equation = equation; }
@@ -71,21 +79,17 @@ public class MainAppController implements Initializable {
             SetEquation(equation);
             MathPower math = new MathPower(equation);
 
-            List<double[]> temp = math.GetRootPoints();
+            List<double[]> rootPoints = math.GetRootPoints();
             List<double[]> extremaPoints = math.GetExtremaPoints();
             List<double[]> inflectionPoints = math.GetInflectionPoints();
 
+            Formatter.SetState(extremaPoints,ExtremaContent,ExtremaTitle, ExtremaClip);
 
-            for (var data: temp)
-                RootsContent.setText(data[0] +"/"+ data[1]);
+            Formatter.SetState(rootPoints,RootsContent,RootsTitle, RootsClip);
 
-            for (var data: extremaPoints)
-                ExtremaContent.setText(data[0] +"/"+ data[1]);
+            Formatter.SetState(inflectionPoints,InflectionContent,InflectionTitle, InflectionClip);
 
-            for (var data: inflectionPoints)
-                InflectionContent.setText(data[0] +"/"+ data[1]);
-
-                YIntersectionContent.setText("0.0/"+ math.GetYIntersectionPoint());
+            YIntersectionContent.setText("0.0/"+ math.GetYIntersectionPoint());
 
             plotLine(x -> Result(x, math.formulaData));
 
@@ -173,6 +177,17 @@ public class MainAppController implements Initializable {
         RootsContent.setText("");
         InflectionContent.setText("");
         YIntersectionContent.setText("");
+        ExtremaTitle.setStyle("-fx-fill:  #092c4c");
+        ExtremaContent.setStyle("-fx-fill:  #092c4c");
+        RootsTitle.setStyle("-fx-fill:  #092c4c");
+        RootsContent.setStyle("-fx-fill:  #092c4c");
+        InflectionTitle.setStyle("-fx-fill:  #092c4c");
+        InflectionContent.setStyle("-fx-fill:  #092c4c");
+        YIntersectionTitle.setStyle("-fx-fill:  #092c4c");
+        YIntersectionContent.setStyle("-fx-fill:  #092c4c");
+        ExtremaClip.setDisable(false);
+        RootsClip.setDisable(false);
+        InflectionClip.setDisable(false);
 
     }
 

@@ -75,19 +75,19 @@ public class FileWriter {
         RootPoints.setCellValue("RootPoints");
 
         var setRootPoints = secondRow.createCell(1);
-        setRootPoints.setCellValue(Formatter.Format(curve.RootPoints));
+        setRootPoints.setCellValue(Formatter.StringFormat(curve.RootPoints));
 
         var ExtremaPoints = firstRow.createCell(2);
         ExtremaPoints.setCellValue("ExtremaPoints");
 
         var setExtremaPoints = secondRow.createCell(2);
-        setExtremaPoints.setCellValue(Formatter.Format(curve.ExtremaPoints));
+        setExtremaPoints.setCellValue(Formatter.StringFormat(curve.ExtremaPoints));
 
         var InflectionPoints = firstRow.createCell(3);
         InflectionPoints.setCellValue("InflectionPoints");
 
         var setInflectionPoints = secondRow.createCell(3);
-        setInflectionPoints.setCellValue(Formatter.Format(curve.InflectionPoints));
+        setInflectionPoints.setCellValue(Formatter.StringFormat(curve.InflectionPoints));
 
         var YIntersectionPoint = firstRow.createCell(4);
         YIntersectionPoint.setCellValue("YIntersectionPoint");
@@ -99,7 +99,7 @@ public class FileWriter {
         XIntersectionPoints.setCellValue("XIntersectionPoints");
 
         var setXIntersectionPoints = secondRow.createCell(5);
-        setXIntersectionPoints.setCellValue(Formatter.Format(curve.XIntersectionPoints));
+        setXIntersectionPoints.setCellValue(Formatter.StringFormat(curve.XIntersectionPoints));
 
         try (FileOutputStream outputStream = new FileOutputStream(filePath)) {
 
@@ -126,15 +126,15 @@ public class FileWriter {
         NewLine linebreak = new NewLine();
         paragraph.addText("Equation: " + curve.equation,20, PDType1Font.HELVETICA);
         paragraph.add(linebreak);
-        paragraph.addText("InflectionPoints: " + Formatter.Format(curve.InflectionPoints),20,PDType1Font.HELVETICA);
+        paragraph.addText("InflectionPoints: " + Formatter.StringFormat(curve.InflectionPoints),20,PDType1Font.HELVETICA);
         paragraph.add(linebreak);
-        paragraph.addText("ExtremaPoints: " + Formatter.Format(curve.ExtremaPoints),20,PDType1Font.HELVETICA);
+        paragraph.addText("ExtremaPoints: " + Formatter.StringFormat(curve.ExtremaPoints),20,PDType1Font.HELVETICA);
         paragraph.add(linebreak);
-        paragraph.addText("RootPoints: " + Formatter.Format(curve.RootPoints),20,PDType1Font.HELVETICA);
+        paragraph.addText("RootPoints: " + Formatter.StringFormat(curve.RootPoints),20,PDType1Font.HELVETICA);
         paragraph.add(linebreak);
         paragraph.addText("YIntersectionPoint: " + YIntersectionPoint,20,PDType1Font.HELVETICA);
         paragraph.add(linebreak);
-        paragraph.addText("XIntersectionPoints: " + Formatter.Format(curve.XIntersectionPoints),20,PDType1Font.HELVETICA);
+        paragraph.addText("XIntersectionPoints: " + Formatter.StringFormat(curve.XIntersectionPoints),20,PDType1Font.HELVETICA);
         document.add(paragraph);
 
         try {

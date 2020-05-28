@@ -1,3 +1,15 @@
+@font-face {
+    src: url("/fonts/Gilroy-Bold.ttf");
+}
+
+@font-face {
+    src: url("/fonts/Gilroy-Medium.ttf");
+}
+
+@font-face {
+    src: url("/fonts/Gilroy-Regular.ttf");
+}
+
 #pane, .root, .split-pane{
     -fx-background-color:#F6FAFD;
     -fx-foreground-color: #F6FAFD;
@@ -174,6 +186,12 @@
 .clipboard-button {
     -fx-cursor: OPEN_HAND;
     -fx-shape: "M 4 2 C 2.895 2 2 2.895 2 4 L 2 17 C 2 17.552 2.448 18 3 18 C 3.552 18 4 17.552 4 17 L 4 4 L 17 4 C 17.552 4 18 3.552 18 3 C 18 2.448 17.552 2 17 2 L 4 2 z M 8 6 C 6.895 6 6 6.895 6 8 L 6 20 C 6 21.105 6.895 22 8 22 L 20 22 C 21.105 22 22 21.105 22 20 L 22 8 C 22 6.895 21.105 6 20 6 L 8 6 z M 8 8 L 20 8 L 20 20 L 8 20 L 8 8 z";
+}
+
+.clipboard-button:disabled {
+    -fx-cursor: DISAPPEAR;
+    -fx-fill:  #D6E1E6;
+    -fx-background-color: #D6E1E6;
 }
 
 .clipboard-button .icon {
