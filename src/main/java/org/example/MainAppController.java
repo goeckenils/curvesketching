@@ -29,7 +29,6 @@ public class MainAppController implements Initializable {
     public Button squaredButton;
     public Button HandleFirstDerivatives;
     public Button clearButton;
-    public Text XIntersectionContent;
     private String _equation;
 
     private void SetEquation(String equation) { _equation = equation; }
@@ -75,7 +74,6 @@ public class MainAppController implements Initializable {
             List<double[]> temp = math.GetRootPoints();
             List<double[]> extremaPoints = math.GetExtremaPoints();
             List<double[]> inflectionPoints = math.GetInflectionPoints();
-            List<double[]> XIntersection = math.GetXIntersectionPoints(1, -10, 10);
 
 
             for (var data: temp)
@@ -88,9 +86,6 @@ public class MainAppController implements Initializable {
                 InflectionContent.setText(data[0] +"/"+ data[1]);
 
                 YIntersectionContent.setText("0.0/"+ math.GetYIntersectionPoint());
-
-            for (var data: XIntersection)
-                XIntersectionContent.setText(data[0] +"/"+ data[1]);
 
             plotLine(x -> Result(x, math.formulaData));
 
@@ -178,7 +173,6 @@ public class MainAppController implements Initializable {
         RootsContent.setText("");
         InflectionContent.setText("");
         YIntersectionContent.setText("");
-        XIntersectionContent.setText("");
 
     }
 
@@ -252,12 +246,5 @@ public class MainAppController implements Initializable {
      */
     public void YIntersectionCopyToClipboard(ActionEvent actionEvent) {
         clip.CopyToClipboard(YIntersectionContent.getText(), errorText);
-    }
-
-    /**
-     * @param actionEvent Copys the content to the clipboard
-     */
-    public void XIntersectionCopyToClipboard(ActionEvent actionEvent) {
-        clip.CopyToClipboard(XIntersectionContent.getText(), errorText);
     }
 }
