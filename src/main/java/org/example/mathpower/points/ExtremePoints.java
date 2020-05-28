@@ -48,8 +48,8 @@ public class ExtremePoints {
                 for (var rootPoint: math.hornersMethod.ReturnRootPointValues(math.firstDerivative))
                     if (Double.isFinite(rootPoint))
                         extremaPoints.add(new double[] {
-                                rootPoint,
-                                math.yValue.GetYValue(math.formulaData, rootPoint)
+                            rootPoint,
+                            math.yValue.GetYValue(math.formulaData, rootPoint)
                         });
 
             } else if (grade == 2) {

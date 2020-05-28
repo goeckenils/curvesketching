@@ -49,12 +49,27 @@ public class HornersMethod {
 
         }
 
-        double [] tempABC = abcFormula.GetValues(x2Values);
+        if (x2Values.get(1)[0] == 0) {
 
-        for (var data: tempABC) {
+            double x2Result = Math.sqrt(-(x2Values.get(2)[0]) / x2Values.get(0)[0]);
 
-            if (Double.isFinite(data))
-                rootPoints.add(data);
+            if (x2Result > 0) {
+
+                rootPoints.add(-x2Result);
+                rootPoints.add(x2Result);
+
+            }
+
+        } else {
+
+            double [] tempABC = abcFormula.GetValues(x2Values);
+
+            for (var data: tempABC) {
+
+                if (Double.isFinite(data))
+                    rootPoints.add(data);
+
+            }
 
         }
 
