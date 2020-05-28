@@ -32,12 +32,34 @@ public class RootPoints {
 
             if (grade >= 3) {
 
-                for (var rootPoint: math.hornersMethod.ReturnRootPointValues(math.formulaData))
-                    if (Double.isFinite(rootPoint))
-                        rootPoints.add(new double[] {
+                if (math.formulaData.get(1)[1] == 0) {
+
+                    double x = -(math.formulaData.get(1)[0]) / math.formulaData.get(0)[0];
+                    double n = 1 / grade;
+                    double calcRoot;
+
+                    if (x < 0 && grade%2 != 0) {
+
+                        rootPoints.add(new double[] { -Math.pow(-x, n), 0 });
+
+                    } else if (x > 0 && grade%2 == 0) {
+
+                        calcRoot = Math.pow(x, n);
+                        rootPoints.add(new double[] { -calcRoot, 0 });
+                        rootPoints.add(new double[] { calcRoot, 0 });
+
+                    }
+
+                } else {
+
+                    for (var rootPoint: math.hornersMethod.ReturnRootPointValues(math.formulaData))
+                        if (Double.isFinite(rootPoint))
+                            rootPoints.add(new double[] {
                                 rootPoint,
                                 0
-                        });
+                            });
+
+                }
 
             } else if (grade == 2) {
 

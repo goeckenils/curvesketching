@@ -90,7 +90,7 @@ public class MainAppController implements Initializable {
 
             Formatter.SetState(inflectionPoints,InflectionContent,InflectionTitle, InflectionClip);
 
-            YIntersectionContent.setText("0.0/"+ math.GetYIntersectionPoint());
+            YIntersectionContent.setText("0/"+ Formatter.DecimalFormat(math.GetYIntersectionPoint()));
 
             plotLine(x -> Result(x, math.formulaData));
 

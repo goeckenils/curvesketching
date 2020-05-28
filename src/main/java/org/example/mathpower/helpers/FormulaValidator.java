@@ -78,7 +78,7 @@ public class FormulaValidator {
 
             } else {
 
-                if (data.matches("[1-9]/[1-9](x)?(\\^[2-4])?")) {
+                if (data.matches("([-])?[1-9]/[1-9](x)?(\\^[2-4])?")) {
 
                     if (data.contains("x")) {
 
