@@ -36,8 +36,6 @@ public class Main extends Application {
 
 
         root.getStylesheets().add(getClass().getClassLoader().getResource("main.css").toExternalForm());
-        Font.loadFont(getClass().getResourceAsStream("Gilroy-Medium.ttf"), 16);
-        Font.loadFont(getClass().getResourceAsStream("Gilroy-Bold.ttf"), 16);
         primaryStage.setTitle("Curve sketching");
         root.setId("rootnode");
         primaryStage.initStyle(StageStyle.TRANSPARENT);

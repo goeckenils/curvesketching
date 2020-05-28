@@ -1,13 +1,16 @@
 @font-face {
-    src: url("/fonts/Gilroy-Bold.ttf");
+    font-family: 'Gilroy-Bold';
+    src: url("Gilroy-Bold.ttf");
 }
 
 @font-face {
-    src: url("/fonts/Gilroy-Medium.ttf");
+    font-family: 'Gilroy-Medium';
+    src: url("Gilroy-Medium.ttf");
 }
 
 @font-face {
-    src: url("/fonts/Gilroy-Regular.ttf");
+    font-family: 'Gilroy-Regular';
+    src: url("Gilroy-Regular.ttf");
 }
 
 #pane, .root, .split-pane{
