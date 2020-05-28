@@ -1,8 +1,6 @@
 package org.example.Helper;
 
 import javafx.scene.control.Button;
-import org.w3c.dom.Text;
-
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -38,16 +36,16 @@ import java.util.List;
 
             } else {
 
-                String text = "";
+                String List = "";
 
                 for (var entry: list) {
 
-                    text += DecimalFormat(entry[0]) +"/"+ DecimalFormat(entry[1]);
-                    text = list.size() > 1 ? text += "  " : text;
+                    List += DecimalFormat(entry[0]) +"/"+ DecimalFormat(entry[1]);
+                    List = list.size() > 1 ? List += "  " : List;
 
                 }
 
-                Content.setText(text);
+                Content.setText(List);
             }
         }
     }

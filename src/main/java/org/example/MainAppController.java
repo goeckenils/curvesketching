@@ -73,6 +73,7 @@ public class MainAppController implements Initializable {
      */
     @FXML
     private void handleSquaredButtonAction(final ActionEvent event) {
+        ClearStage(false);
 
         try {
             String equation = input.getText();
@@ -168,10 +169,13 @@ public class MainAppController implements Initializable {
      */
     @FXML
     private void handleClearButtonAction(final ActionEvent event) {
+        ClearStage(true);
+    }
 
+    private void ClearStage(boolean clearInput) {
+        if (clearInput) input.setText("");
         mathsGraph.clear();
         errorText.setText("");
-        input.setText("");
         input.setStyle("-fx-border-color: transparent");
         ExtremaContent.setText("");
         RootsContent.setText("");
@@ -188,9 +192,7 @@ public class MainAppController implements Initializable {
         ExtremaClip.setDisable(false);
         RootsClip.setDisable(false);
         InflectionClip.setDisable(false);
-
     }
-
     /**
      * @param event is closing the window
      */
