@@ -38,9 +38,16 @@ import java.util.List;
 
             } else {
 
+                String text = "";
+
                 for (var entry: list) {
-                    Content.setText(DecimalFormat(entry[0]) +"/"+ DecimalFormat(entry[1]));
+
+                    text += DecimalFormat(entry[0]) +"/"+ DecimalFormat(entry[1]);
+                    text = list.size() > 1 ? text += "  " : text;
+
                 }
+
+                Content.setText(text);
             }
         }
     }

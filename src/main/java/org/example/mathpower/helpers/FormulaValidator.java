@@ -1,5 +1,6 @@
 package org.example.mathpower.helpers;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -15,8 +16,6 @@ public class FormulaValidator {
 
         List<String> dataFormula = new ArrayList<>();
         List<double[]> dataResult = new ArrayList<>();
-        int count = 0;
-        String resultString;
         String[] formulaDataArray;
         Boolean firstNegative = false;
         formula = formula.replaceAll(" ", "");
@@ -32,51 +31,21 @@ public class FormulaValidator {
         //Splits the formula into parts, when a "+" appears
         for (var part : formula.split("\\+")) {
 
-            resultString = "";
-
             //Checks if the part contains a minus, format and added it into the final string
             if (part.matches(".*-.*")) {
 
                 formulaDataArray = part.split("-");
+                dataFormula.add(formulaDataArray[0]);
 
-                for (var formulaData : formulaDataArray) {
-
-                    if (formulaData.matches(".*\\(.*\\/.*\\).*")) {
-
-                        List<String> fractionValues = FractionValues(formulaData);
-                        String tempNumber = formulaData.split("\\(.*\\)")[1].split("x\\^")[1];
-                        formulaData = FractionValue(fractionValues);
-                        resultString = formulaData + "x^" + tempNumber;
-
-                    } else {
-
-                        resultString = count == 0 ? formulaData : "-" + formulaData;
-                        count++;
-
-                    }
-
-                    dataFormula.add(resultString);
-
-                }
+                for (int count = 1; count <= formulaDataArray.length - 1; count++)
+                    dataFormula.add("-" + formulaDataArray[count]);
 
             } else {
 
-                String temp = "";
+                if (part.matches(".*\\(.*\\/.*\\).*"))
+                    part = part.replaceAll("\\(", "").replaceAll("\\)", "");
 
-                if (part.matches(".*\\(.*\\/.*\\).*")) {
-
-                    List<String> fractionValues = FractionValues(part);
-                    part = part.contains("x") ? part.split("\\(.*\\)")[1] : "";
-                    temp = FractionValue(fractionValues);
-                    resultString += temp.concat(part);
-
-                } else {
-
-                    resultString = part;
-
-                }
-
-                dataFormula.add(resultString);
+                dataFormula.add(part);
 
             }
 
@@ -96,7 +65,11 @@ public class FormulaValidator {
 
             } else {
 
-                if (data.endsWith("x")) {
+                if (data.matches("[1-9]/[1-9]x(\\^[2-4])?")) {
+
+                    //TODO
+
+                } else if (data.endsWith("x")) {
 
                     for (var singleX : data.split("x")) {
 
@@ -144,7 +117,8 @@ public class FormulaValidator {
      */
     private List<String> FractionValues(String tempFormulaString) {
 
-        return Arrays.asList(tempFormulaString.split("\\(*\\)*")).subList(2, 5);
+        List<String> fractionResults = Arrays.asList(tempFormulaString.split("\\(*\\)*")).subList(2, 5);
+        return Arrays.asList(fractionResults.get(0), fractionResults.get(2));
 
     }
 
