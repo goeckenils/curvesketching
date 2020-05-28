@@ -120,6 +120,7 @@ public class HornersMethod {
 
             } else {
 
+
                 while ((data[1] - 1) != --grade) {
 
                     newFormula.add(new double[]{
@@ -143,19 +144,6 @@ public class HornersMethod {
                     newFormula.add(new double[]{
                         data[0] + (guessedRootPoint * newFormula.get((int) count - 1)[0]),
                         data[1] - 1
-                    });
-
-                }
-
-            }
-
-            if (grade == formulaData.size() - 1 && (data[1] > 0 || data[1] < 0)){
-
-                while (grade != 0) {
-
-                    newFormula.add(new double[] {
-                        0 + (guessedRootPoint * newFormula.get((int) count)[0]),
-                        --grade
                     });
 
                 }
