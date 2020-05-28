@@ -1,6 +1,5 @@
 package org.example.mathpower.helpers;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,7 +15,9 @@ public class FormulaValidator {
 
         List<String> dataFormula = new ArrayList<>();
         List<double[]> dataResult = new ArrayList<>();
-        String[] formulaDataArray;
+        String[] formulaDataArray, dataSplit, fractionSplit;
+        double multi;
+        int grade;
         Boolean firstNegative = false;
         formula = formula.replaceAll(" ", "");
 
@@ -35,10 +36,22 @@ public class FormulaValidator {
             if (part.matches(".*-.*")) {
 
                 formulaDataArray = part.split("-");
-                dataFormula.add(formulaDataArray[0]);
 
-                for (int count = 1; count <= formulaDataArray.length - 1; count++)
-                    dataFormula.add("-" + formulaDataArray[count]);
+                if (formulaDataArray[0].matches(".*\\(.*\\/.*\\).*"))
+                    dataFormula.add(formulaDataArray[0]
+                        .replaceAll("\\(", "")
+                        .replaceAll("\\)", ""));
+                else
+                    dataFormula.add(formulaDataArray[0]);
+
+                for (int count = 1; count <= formulaDataArray.length - 1; count++) {
+
+                    if (formulaDataArray[count].matches(".*\\(.*\\/.*\\).*"))
+                        dataFormula.add("-" + formulaDataArray[count].replaceAll("\\(", "").replaceAll("\\)", ""));
+                    else
+                        dataFormula.add("-" + formulaDataArray[count]);
+
+                }
 
             } else {
 
@@ -65,9 +78,23 @@ public class FormulaValidator {
 
             } else {
 
-                if (data.matches("[1-9]/[1-9]x(\\^[2-4])?")) {
+                if (data.matches("[1-9]/[1-9](x)?(\\^[2-4])?")) {
 
-                    //TODO
+                    if (data.contains("x")) {
+
+                        dataSplit = data.contains("x^") ? data.split("x\\^") : data.split("x");
+                        fractionSplit = dataSplit[0].split("/");
+                        multi = Double.valueOf(Double.valueOf(fractionSplit[0]) / Double.valueOf(fractionSplit[1]));
+                        grade = dataSplit.length == 1 ? 1 : Integer.valueOf(dataSplit[1]);
+                        dataResult.add(new double[] { multi, grade });
+
+                    } else {
+
+                        fractionSplit = data.split("/");
+                        multi = Double.valueOf(Double.valueOf(fractionSplit[0]) / Double.valueOf(fractionSplit[1]));
+                        dataResult.add(new double[] { multi, 0 });
+
+                    }
 
                 } else if (data.endsWith("x")) {
 

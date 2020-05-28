@@ -48,7 +48,7 @@ public class MathPower {
      * Getter of a list of positions of possible extreme points.
      * @return a list of double arrays which include the positions of possible extreme points.
      */
-    public List<double[]> GetExtremaPoints() { return extremePoints.ReturnExtremenPoints(); }
+    public List<double[]> GetExtremaPoints() { return extremePoints.ReturnExtremePoints(); }
 
     /**
      * Getter of a list of positions of possible inflection points.

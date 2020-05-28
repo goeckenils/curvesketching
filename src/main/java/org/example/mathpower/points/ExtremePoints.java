@@ -19,9 +19,12 @@ public class ExtremePoints {
      * Arranges the first derivative of the formula and returns extreme points if available.
      * @return a list of double arrays with the position of the extreme point.
      */
-    public List<double[]> ReturnExtremenPoints() {
+    public List<double[]> ReturnExtremePoints() {
 
         List<double[]> extremaPoints = new ArrayList<>();
+
+        if (math.firstDerivative.isEmpty())
+            return extremaPoints;
 
         double grade = math.firstDerivative.get(0)[1];
 
