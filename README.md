@@ -33,6 +33,15 @@ Apache PDFBox wird verwendet, um die Daten in einer PDF Datei zu speichern.
 ## [Pdfbox - layout](https://github.com/ralfstuckert/pdfbox-layout)
 Durch die limitierte Bereitstellung der PDFBox API, konnten wir mit dem PDFBox Layout Package Abhilfe schaffen, um die PDF Dokumente vernünftig strukturieren zu können.
 
+
+# GUI
+
+Ob wir eine GUI entwerfen war für uns keine Frage da ich in meiner Firma vor allem im Thema Frontend eingesetzt werde. Da ich normalerweise mit HTML, CSS und JS entwickle
+
+war JavaFx in der Theorie ein Heimspiel. Die durch FXML dargestellte abgekapselte Logik erinnerte doch stark an HTML hier arbeitete ich mit Referenzen um im MainAppController
+
+die Programmatische Logik unterzubringen. Um die Elemente zu stylen fügte ich ein Stylesheet (CSS) ein. Das FXML Dokument erstellte ich mit dem [Scenebuilder](https://gluonhq.com/products/scene-builder/) der wie eine Art Baukasten Editor funktioniert.
+
 # MathPower 
 ### Paket für die Verarbeitung der mathematischen Funktionen
 
@@ -68,5 +77,5 @@ Innerhalb von dem Package MathPower habe ich drei Java interne Utilities genutzt
     - Bei einzelnen Informationen, welche dynamisch bearbeitet werden sollen, habe ich mich für eine Liste entschieden.
     - Entscheidener Unterschied zu dem Package .ArrayList ist, dass nur einzelne Informationen (Strings, Doubles) ohne Reihung eingefügt (außer einer weiteren Liste = List<List<Double>>) werden konnten. Die Einbindung der Daten in ein Array entfand ich somit deutlich leserlicher.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTM3MDc0MTZdfQ==
+eyJoaXN0b3J5IjpbLTE2NjA2MjIyNzcsOTM3MDc0MTZdfQ==
 -->
