@@ -2,6 +2,7 @@ package org.example.Helper;
 
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Tooltip;
+import javafx.util.Duration;
 
 import java.util.function.Function;
 
@@ -22,7 +23,7 @@ public class MyGraph {
 
         final XYChart.Series<Double, Double> series = new XYChart.Series<Double, Double>();
 
-        for (double x = -range; x <= range; x = x + 0.01) {
+        for (double x = -range; x <= range; x = x + 0.1) {
 
             plotPoint(x, function.apply(x), series);
 
@@ -32,26 +33,26 @@ public class MyGraph {
 
     }
 
-/*   public void TooltipOnChart () {
-        int count = 0;
+   public void TooltipOnChart () {
         for (XYChart.Series<Double,Double> s:
         graph.getData()){
             for (XYChart.Data<Double, Double> d : s.getData()) {
-                count++;
-                if (count%100 != 0) {continue; }
+                var xValue = Formatter.DecimalFormat(d.getXValue());
+                var yValue = Formatter.DecimalFormat(d.getYValue());
+
                 var node = d.getNode();
-                Tooltip.install(node, new Tooltip(
-                    "X Axes: "+ d.getXValue().toString() +"\n" +
-                        "Y Axes: " + d.getYValue()));
+                Tooltip tooltip = new Tooltip("X Axes: "+ xValue +"\n" +
+                    "Y Axes: " + yValue);
+                tooltip.setShowDelay(Duration.seconds(0));
+                Tooltip.install(node,tooltip);
 
                 //Adding class on hover
                 d.getNode().setOnMouseEntered(event -> d.getNode().getStyleClass().add("onHover"));
-                d.getNode().setOnMouseEntered(event -> System.out.println(d.getXValue() + d.getYValue()));
                 //Removing class on exit
                 d.getNode().setOnMouseExited(event -> d.getNode().getStyleClass().remove("onHover"));
             }
         }
-    }*/
+    }
 
     private void plotPoint(final double x, final double y, final XYChart.Series<Double, Double> series) {
 

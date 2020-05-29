@@ -98,6 +98,7 @@ public class MainAppController implements Initializable {
 
 
             plotLine(x -> Result(x, math.formulaData));
+            mathsGraph.TooltipOnChart();
 
         } catch (Exception ex) {
             SetError();

@@ -30,7 +30,7 @@ import java.util.List;
         public static void SetState (List<double[]> list, javafx.scene.text.Text Content, javafx.scene.text.Text Title, Button Clipboard) {
             if(list.isEmpty()) {
                 Clipboard.setDisable(true);
-                Content.setText("Not available");
+                Content.setText("/");
                 Title.setStyle("-fx-fill:  #D6E1E6");
                 Content.setStyle("-fx-fill:  #D6E1E6");
 
