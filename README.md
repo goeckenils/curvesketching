@@ -8,8 +8,18 @@ Entwickeln Sie ein Java-Programm, das eine Kurvendiskussion entsprechend des Mat
 Hinweis (optional):   
  
 Das Programm darf gerne auch mithilfe von Swing oder Java FX umgesetzt werden.   
+
+# Maven
+In diesem Projekt verwenden wir Maven als Paketmanager, dies war jedoch nicht von Anfang an so. Die ersten 3 Wochen arbeiteten wir in einem normalem Intellij Projekt, hier entstanden nun aber die ersten Fehler. Wir mussten alle externen Pakete die wir verwenden wollten händisch hinzufügen und im gleichen Zug in der .gitignore excluden hiermit stellten wir sicher das es zu keinen merge Fehlern kommt.
+
+Wir stellten uns die Frage ob das Projekt überhaupt in dem rahmen ohne große Erklärungen von jemand anderem hätte maintained werden können. Wir kamen zu dem Entschluss nein und recherchierten daraufhin.
+
+Maven als Abhängigkeit Management Tool war das wonach wir suchten und starteten daher mit der Migration.
+
+Um nun Packages Hinzufügen zu können muss die Abhängigkeit nur in die Pom.xml Datei deklariert werden, Maven erledigt nun den Rest und lädt alle Abhängigkeiten automatisch herunter.
+
   
-# Packages
+## Packages
 
 ##  [JavaFX 14](https://openjfx.io/index.html)
 JavaFx wird verwendet für die graphische Darstellung der generierten Daten 
@@ -57,3 +67,6 @@ Innerhalb von dem Package MathPower habe ich drei Java interne Utilities genutzt
 3. java.util.List;
     - Bei einzelnen Informationen, welche dynamisch bearbeitet werden sollen, habe ich mich für eine Liste entschieden.
     - Entscheidener Unterschied zu dem Package .ArrayList ist, dass nur einzelne Informationen (Strings, Doubles) ohne Reihung eingefügt (außer einer weiteren Liste = List<List<Double>>) werden konnten. Die Einbindung der Daten in ein Array entfand ich somit deutlich leserlicher.
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTExOTI4ODQ5ODNdfQ==
+-->
