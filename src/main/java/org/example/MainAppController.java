@@ -22,6 +22,7 @@ import java.util.ResourceBundle;
 import java.util.function.Function;
 
 public class MainAppController implements Initializable {
+
     public Text ExtremaTitle;
     public Text ExtremaContent;
     public Text RootsContent;
@@ -65,6 +66,8 @@ public class MainAppController implements Initializable {
     }
 
 
+
+
     Clip clip = new Clip();
 
 
@@ -73,6 +76,7 @@ public class MainAppController implements Initializable {
      */
     @FXML
     private void handleSquaredButtonAction(final ActionEvent event) {
+
         ClearStage(false);
 
         try {
@@ -91,6 +95,7 @@ public class MainAppController implements Initializable {
             Formatter.SetState(inflectionPoints,InflectionContent,InflectionTitle, InflectionClip);
 
             YIntersectionContent.setText("0/"+ Formatter.DecimalFormat(math.GetYIntersectionPoint()));
+
 
             plotLine(x -> Result(x, math.formulaData));
 
@@ -141,6 +146,7 @@ public class MainAppController implements Initializable {
 
 
         try {
+
             MathPower math = new MathPower(_equation);
             plotLine(x -> Result(x, math.firstDerivative));
 
@@ -163,6 +169,8 @@ public class MainAppController implements Initializable {
         } catch (Exception ex) { SetError(); }
 
     }
+
+
 
     /**
      * @param event clears the data out of GUI
@@ -215,8 +223,8 @@ public class MainAppController implements Initializable {
                 math.GetRootPoints(),
                 math.GetYIntersectionPoint(),
                 math.GetXIntersectionPoints(1,-10,10));
-        String PathFileExtension = fileWriter.ChooseDirectory("Save your file","Equation","pdf", stage);
-        fileWriter.WriteToPdf(fileWriter,PathFileExtension);
+        String filepath = fileWriter.ChooseDirectory("Save your file","Equation","pdf", stage);
+        fileWriter.WriteToPdf(fileWriter,filepath);
     }
 
     /**
@@ -231,8 +239,8 @@ public class MainAppController implements Initializable {
                 math.GetRootPoints(),
                 math.GetYIntersectionPoint(),
                 math.GetXIntersectionPoints(1,-10,10));
-        String PathFileExtension = fileWriter.ChooseDirectory("Save your file","Equation","xlsx", stage);
-        fileWriter.WriteToExcel(fileWriter,PathFileExtension);
+        String filepath = fileWriter.ChooseDirectory("Save your file","Equation","xlsx", stage);
+        fileWriter.WriteToExcel(fileWriter,filepath);
 
     }
 

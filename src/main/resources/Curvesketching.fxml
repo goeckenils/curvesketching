@@ -78,21 +78,21 @@
       <Button fx:id="clearStage" layoutX="825.0" layoutY="-3.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleStageClearButton" prefHeight="16.0" prefWidth="16.0" styleClass="close-button" />
       <Pane layoutX="14.0" layoutY="230.0" prefHeight="287.0" prefWidth="382.0" styleClass="wrapper">
          <children>
-            <Text fx:id="ExtremaTitle" layoutX="14.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="Extrema:" wrappingWidth="81.22900390625">
+            <Text fx:id="RootsTitle" layoutX="14.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="Roots:" wrappingWidth="81.22900390625">
                <font>
                   <Font size="16.0" />
                </font>
             </Text>
-            <Button fx:id="ExtremaClip" layoutX="347.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#ExtremaCopyToClipboard" prefHeight="16.0" prefWidth="16.0" styleClass="clipboard-button" />
-            <Text fx:id="ExtremaContent" layoutX="15.0" layoutY="51.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" wrappingWidth="320.4558375929362" />
+            <Button fx:id="RootsClip" layoutX="347.0" layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#RootsCopyToClipboard" prefHeight="16.0" prefWidth="16.0" styleClass="clipboard-button" />
+            <Text fx:id="RootsContent" layoutX="15.0" layoutY="51.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" wrappingWidth="320.4558375929362" />
             <Line endX="277.0" layoutX="105.0" layoutY="71.0" startX="-106.14617156982422" stroke="#eaeef4" />
-            <Text fx:id="RootsTitle" layoutX="15.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="Roots:" wrappingWidth="81.22900390625">
+            <Text fx:id="ExtremaTitle" layoutX="15.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h2" text="Extrema:" wrappingWidth="81.22900390625">
                <font>
                   <Font size="16.0" />
                </font>
             </Text>
-            <Button fx:id="RootsClip" layoutX="348.0" layoutY="103.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#RootsCopyToClipboard" prefHeight="16.0" prefWidth="16.0" styleClass="clipboard-button" />
-            <Text fx:id="RootsContent" layoutX="16.0" layoutY="116.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" wrappingWidth="320.4558375929362" />
+            <Button fx:id="ExtremaClip" layoutX="348.0" layoutY="103.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#ExtremaCopyToClipboard" prefHeight="16.0" prefWidth="16.0" styleClass="clipboard-button" />
+            <Text fx:id="ExtremaContent" layoutX="16.0" layoutY="116.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="h3" wrappingWidth="320.4558375929362" />
             <Line endX="277.0" layoutX="106.0" layoutY="133.0" startX="-106.14617156982422" stroke="#eaeef4" />
          </children>
          <opaqueInsets>
