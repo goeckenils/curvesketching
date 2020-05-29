@@ -6,7 +6,7 @@ public class Bisection {
 
     /**
      * Calculates and returns a value which approach a x-value of a root point.
-     * @param lowerLimitation   lower limitation for the biscetion
+     * @param lowerLimitation   lower limitation for the bisection
      * @param upperLimitation   upper limitation for the bisection
      * @param formulaData       list of double arrays with multiplier and grades of the formula
      * @return                  a value which approach a x-value of a root point
