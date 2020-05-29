@@ -16,7 +16,7 @@ Wir stellten uns die Frage ob das Projekt überhaupt in dem rahmen ohne große E
 
 Maven als Abhängigkeit Management Tool war das wonach wir suchten und starteten daher mit der Migration.
 
-Um nun Packages Hinzufügen zu können muss die Abhängigkeit nur in die Pom.xml Datei deklariert werden, Maven erledigt nun den Rest und lädt alle Abhängigkeiten automatisch herunter.
+Um nun Packages Hinzufügen zu können muss die Abhängigkeit nur in der Pom.xml Datei deklariert werden, Maven erledigt nun den Rest und lädt alle Abhängigkeiten automatisch herunter.
 
   
 ## Packages
@@ -68,5 +68,5 @@ Innerhalb von dem Package MathPower habe ich drei Java interne Utilities genutzt
     - Bei einzelnen Informationen, welche dynamisch bearbeitet werden sollen, habe ich mich für eine Liste entschieden.
     - Entscheidener Unterschied zu dem Package .ArrayList ist, dass nur einzelne Informationen (Strings, Doubles) ohne Reihung eingefügt (außer einer weiteren Liste = List<List<Double>>) werden konnten. Die Einbindung der Daten in ein Array entfand ich somit deutlich leserlicher.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExOTI4ODQ5ODNdfQ==
+eyJoaXN0b3J5IjpbOTM3MDc0MTZdfQ==
 -->
